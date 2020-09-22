@@ -42,83 +42,128 @@ public class Agenda extends javax.swing.JFrame {
         jTextArea1 = new javax.swing.JTextArea();
         hora_txt = new javax.swing.JLabel();
         id_txt1 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        listaCliente_tb = new javax.swing.JTable();
+        agendar_bt = new javax.swing.JButton();
         label_fundo_fosco = new javax.swing.JLabel();
         label_img_fundo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        id_txt.setFont(new java.awt.Font("Britannic Bold", 1, 18)); // NOI18N
+        id_txt.setFont(new java.awt.Font("Berlin Sans FB", 0, 24)); // NOI18N
         id_txt.setForeground(new java.awt.Color(255, 255, 255));
         id_txt.setText("Observação");
-        getContentPane().add(id_txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 280, 140, 40));
-        getContentPane().add(id_tf, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 280, 260, 40));
+        getContentPane().add(id_txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 190, 140, 40));
+        getContentPane().add(id_tf, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 190, 260, 40));
 
-        cliente_txt.setFont(new java.awt.Font("Britannic Bold", 1, 18)); // NOI18N
+        cliente_txt.setFont(new java.awt.Font("Berlin Sans FB", 0, 24)); // NOI18N
         cliente_txt.setForeground(new java.awt.Color(255, 255, 255));
         cliente_txt.setText("Cliente");
-        getContentPane().add(cliente_txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 340, 90, 40));
+        getContentPane().add(cliente_txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 250, 90, 40));
 
-        getContentPane().add(cliente_cb, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 340, 260, 40));
+        getContentPane().add(cliente_cb, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 250, 260, 40));
 
-        servico_txt.setFont(new java.awt.Font("Britannic Bold", 1, 18)); // NOI18N
+        servico_txt.setFont(new java.awt.Font("Berlin Sans FB", 0, 24)); // NOI18N
         servico_txt.setForeground(new java.awt.Color(255, 255, 255));
         servico_txt.setText("Serviço");
-        getContentPane().add(servico_txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 400, 90, 40));
+        getContentPane().add(servico_txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 310, 90, 40));
 
-        getContentPane().add(servico_cb, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 400, 260, 40));
+        getContentPane().add(servico_cb, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 310, 260, 40));
 
-        valor_txt.setFont(new java.awt.Font("Britannic Bold", 1, 18)); // NOI18N
+        valor_txt.setFont(new java.awt.Font("Berlin Sans FB", 0, 24)); // NOI18N
         valor_txt.setForeground(new java.awt.Color(255, 255, 255));
         valor_txt.setText("Valor R$");
-        getContentPane().add(valor_txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 460, 90, 40));
+        getContentPane().add(valor_txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 370, 90, 40));
 
         valor_ftf.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 valor_ftfActionPerformed(evt);
             }
         });
-        getContentPane().add(valor_ftf, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 520, 260, 40));
+        getContentPane().add(valor_ftf, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 430, 260, 40));
 
-        data_txt.setFont(new java.awt.Font("Britannic Bold", 1, 18)); // NOI18N
+        data_txt.setFont(new java.awt.Font("Berlin Sans FB", 0, 24)); // NOI18N
         data_txt.setForeground(new java.awt.Color(255, 255, 255));
         data_txt.setText("Data");
-        getContentPane().add(data_txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 520, 90, 40));
+        getContentPane().add(data_txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 430, 90, 40));
 
         data_ftf.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 data_ftfActionPerformed(evt);
             }
         });
-        getContentPane().add(data_ftf, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 460, 260, 40));
+        getContentPane().add(data_ftf, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 370, 260, 40));
 
         hora_ftf.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 hora_ftfActionPerformed(evt);
             }
         });
-        getContentPane().add(hora_ftf, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 580, 260, 40));
+        getContentPane().add(hora_ftf, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 490, 260, 40));
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
         jScrollPane1.setViewportView(jTextArea1);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 280, 570, 350));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 190, 590, 290));
 
-        hora_txt.setFont(new java.awt.Font("Britannic Bold", 1, 18)); // NOI18N
+        hora_txt.setFont(new java.awt.Font("Berlin Sans FB", 0, 24)); // NOI18N
         hora_txt.setForeground(new java.awt.Color(255, 255, 255));
         hora_txt.setText("Hora");
-        getContentPane().add(hora_txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 580, 90, 40));
+        getContentPane().add(hora_txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 490, 90, 40));
 
-        id_txt1.setFont(new java.awt.Font("Britannic Bold", 1, 18)); // NOI18N
+        id_txt1.setFont(new java.awt.Font("Berlin Sans FB", 0, 24)); // NOI18N
         id_txt1.setForeground(new java.awt.Color(255, 255, 255));
         id_txt1.setText("ID");
-        getContentPane().add(id_txt1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 280, 90, 40));
+        getContentPane().add(id_txt1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 190, 90, 40));
+
+        listaCliente_tb.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "ID", "Cliente", "Serviço", "Valor", "Data", "Hora", "Observação"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.Float.class, java.lang.Object.class, java.lang.Object.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane2.setViewportView(listaCliente_tb);
+        if (listaCliente_tb.getColumnModel().getColumnCount() > 0) {
+            listaCliente_tb.getColumnModel().getColumn(0).setMinWidth(50);
+            listaCliente_tb.getColumnModel().getColumn(0).setMaxWidth(150);
+            listaCliente_tb.getColumnModel().getColumn(3).setMinWidth(100);
+            listaCliente_tb.getColumnModel().getColumn(3).setMaxWidth(150);
+        }
+
+        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 560, 1110, 360));
+
+        agendar_bt.setBackground(new java.awt.Color(153, 153, 255));
+        agendar_bt.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
+        agendar_bt.setForeground(new java.awt.Color(51, 51, 51));
+        agendar_bt.setText("AGENDAR");
+        getContentPane().add(agendar_bt, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 490, 590, 50));
 
         label_fundo_fosco.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Agenda-PainelFundo.png"))); // NOI18N
         getContentPane().add(label_fundo_fosco, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
-        label_img_fundo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/AgendaFundo.png"))); // NOI18N
+        label_img_fundo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/agenda.png"))); // NOI18N
         getContentPane().add(label_img_fundo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
@@ -172,6 +217,7 @@ public class Agenda extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton agendar_bt;
     private javax.swing.JComboBox<String> cliente_cb;
     private javax.swing.JLabel cliente_txt;
     private javax.swing.JFormattedTextField data_ftf;
@@ -182,9 +228,11 @@ public class Agenda extends javax.swing.JFrame {
     private javax.swing.JLabel id_txt;
     private javax.swing.JLabel id_txt1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JLabel label_fundo_fosco;
     private javax.swing.JLabel label_img_fundo;
+    private javax.swing.JTable listaCliente_tb;
     private javax.swing.JComboBox<String> servico_cb;
     private javax.swing.JLabel servico_txt;
     private javax.swing.JFormattedTextField valor_ftf;

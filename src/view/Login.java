@@ -32,29 +32,29 @@ public class Login extends javax.swing.JFrame {
         login_txt = new javax.swing.JLabel();
         jp_password = new javax.swing.JPasswordField();
         jtf_user = new javax.swing.JTextField();
-        fundoLogin = new javax.swing.JLabel();
+        agendar_bt = new javax.swing.JButton();
         bg = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        user_txt.setFont(new java.awt.Font("Buxton Sketch", 1, 28)); // NOI18N
+        user_txt.setFont(new java.awt.Font("Berlin Sans FB", 0, 36)); // NOI18N
         user_txt.setForeground(new java.awt.Color(204, 204, 204));
         user_txt.setText("Usuário");
-        getContentPane().add(user_txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 450, 400, 30));
+        getContentPane().add(user_txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 420, 400, 30));
 
-        pw_txt.setFont(new java.awt.Font("Buxton Sketch", 1, 28)); // NOI18N
+        pw_txt.setFont(new java.awt.Font("Berlin Sans FB", 0, 36)); // NOI18N
         pw_txt.setForeground(new java.awt.Color(204, 204, 204));
         pw_txt.setText("Senha");
-        getContentPane().add(pw_txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 560, 400, 30));
+        getContentPane().add(pw_txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 530, 400, 30));
 
-        login_txt.setFont(new java.awt.Font("Buxton Sketch", 1, 36)); // NOI18N
+        login_txt.setFont(new java.awt.Font("Berlin Sans FB", 0, 48)); // NOI18N
         login_txt.setForeground(new java.awt.Color(204, 204, 204));
         login_txt.setText("Login");
-        getContentPane().add(login_txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 340, -1, -1));
+        getContentPane().add(login_txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 360, -1, -1));
 
         jp_password.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
-        getContentPane().add(jp_password, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 590, 400, 40));
+        getContentPane().add(jp_password, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 570, 520, 40));
 
         jtf_user.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
         jtf_user.addActionListener(new java.awt.event.ActionListener() {
@@ -62,12 +62,20 @@ public class Login extends javax.swing.JFrame {
                 jtf_userActionPerformed(evt);
             }
         });
-        getContentPane().add(jtf_user, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 490, 400, 40));
+        getContentPane().add(jtf_user, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 460, 520, 40));
 
-        fundoLogin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/painel-login.png"))); // NOI18N
-        getContentPane().add(fundoLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 270, -1, -1));
+        agendar_bt.setBackground(new java.awt.Color(96, 218, 117));
+        agendar_bt.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
+        agendar_bt.setForeground(new java.awt.Color(51, 51, 51));
+        agendar_bt.setText("ENTRAR");
+        agendar_bt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                agendar_btActionPerformed(evt);
+            }
+        });
+        getContentPane().add(agendar_bt, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 640, 410, 60));
 
-        bg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Logo.jpg"))); // NOI18N
+        bg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Prancheta 1.png"))); // NOI18N
         getContentPane().add(bg, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
@@ -76,6 +84,10 @@ public class Login extends javax.swing.JFrame {
     private void jtf_userActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtf_userActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jtf_userActionPerformed
+
+    private void agendar_btActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agendar_btActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_agendar_btActionPerformed
 
     /**
      * @param args the command line arguments
@@ -113,8 +125,8 @@ public class Login extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton agendar_bt;
     private javax.swing.JLabel bg;
-    private javax.swing.JLabel fundoLogin;
     private javax.swing.JPasswordField jp_password;
     private javax.swing.JTextField jtf_user;
     private javax.swing.JLabel login_txt;
