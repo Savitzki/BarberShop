@@ -5,17 +5,25 @@
  */
 package view;
 
+import controller.AgendaController;
+import javax.swing.JTable;
+
 /**
  *
  * @author Marina Savitzki
  */
 public class Agenda extends javax.swing.JFrame {
 
+    private final AgendaController controller;
+
     /**
      * Creates new form Agenda
      */
     public Agenda() {
         initComponents();
+        setLocationRelativeTo(null);
+        this.controller = new AgendaController(this);
+        iniciar();
     }
 
     /**
@@ -118,6 +126,7 @@ public class Agenda extends javax.swing.JFrame {
         id_txt1.setText("ID");
         getContentPane().add(id_txt1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 190, 90, 40));
 
+        listaCliente_tb.setFont(new java.awt.Font("Berlin Sans FB", 0, 18)); // NOI18N
         listaCliente_tb.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null},
@@ -238,4 +247,18 @@ public class Agenda extends javax.swing.JFrame {
     private javax.swing.JFormattedTextField valor_ftf;
     private javax.swing.JLabel valor_txt;
     // End of variables declaration//GEN-END:variables
+
+    private void iniciar() {
+        this.controller.refreshTable();
+    }
+
+    public JTable getListaCliente_tb() {
+        return listaCliente_tb;
+    }
+
+    public void setListaCliente_tb(JTable listaCliente_tb) {
+        this.listaCliente_tb = listaCliente_tb;
+    }
+    
+    
 }

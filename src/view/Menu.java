@@ -1,9 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package view;
+
+import controller.MenuController;
 
 /**
  *
@@ -11,11 +8,16 @@ package view;
  */
 public class Menu extends javax.swing.JFrame {
 
+    private final MenuController controller;
+
     /**
      * Creates new form Menu
      */
     public Menu() {
         initComponents();
+//        iniciar a tela principal maximizada
+        setExtendedState(MAXIMIZED_BOTH);
+        this.controller = new MenuController(this);
     }
 
     /**
@@ -28,49 +30,74 @@ public class Menu extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jMenuBar_menu = new javax.swing.JMenuBar();
-        jMenu_cadastro = new javax.swing.JMenu();
+        menuBar = new javax.swing.JMenuBar();
+        cadastroMenu = new javax.swing.JMenu();
         jMenuItem_cliente = new javax.swing.JMenuItem();
         jMenuItem_servico = new javax.swing.JMenuItem();
         jMenuItem_usuario = new javax.swing.JMenuItem();
-        jMenu_operacao = new javax.swing.JMenu();
-        jMenu_relatorio = new javax.swing.JMenu();
+        operacaoMenu = new javax.swing.JMenu();
+        agendaItemMenu = new javax.swing.JMenuItem();
+        relatorioMenu = new javax.swing.JMenu();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Prancheta 2.png"))); // NOI18N
         jLabel1.setText("jLabel1");
 
-        jMenuBar_menu.setFont(new java.awt.Font("Buxton Sketch", 0, 24)); // NOI18N
+        menuBar.setFont(new java.awt.Font("Buxton Sketch", 0, 24)); // NOI18N
+        menuBar.setPreferredSize(new java.awt.Dimension(235, 40));
 
-        jMenu_cadastro.setText("Cadastro");
+        cadastroMenu.setText("Cadastro");
+        cadastroMenu.setFont(new java.awt.Font("Berlin Sans FB", 0, 20)); // NOI18N
+        cadastroMenu.setPreferredSize(new java.awt.Dimension(100, 24));
 
+        jMenuItem_cliente.setFont(new java.awt.Font("Berlin Sans FB", 0, 18)); // NOI18N
         jMenuItem_cliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons/cliente-icon.png"))); // NOI18N
         jMenuItem_cliente.setText("Cliente");
+        jMenuItem_cliente.setPreferredSize(new java.awt.Dimension(120, 30));
         jMenuItem_cliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem_clienteActionPerformed(evt);
             }
         });
-        jMenu_cadastro.add(jMenuItem_cliente);
+        cadastroMenu.add(jMenuItem_cliente);
 
+        jMenuItem_servico.setFont(new java.awt.Font("Berlin Sans FB", 0, 18)); // NOI18N
         jMenuItem_servico.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons/tesoura-icon.png"))); // NOI18N
         jMenuItem_servico.setText("Serviço");
-        jMenu_cadastro.add(jMenuItem_servico);
+        jMenuItem_servico.setPreferredSize(new java.awt.Dimension(120, 30));
+        cadastroMenu.add(jMenuItem_servico);
 
+        jMenuItem_usuario.setFont(new java.awt.Font("Berlin Sans FB", 0, 18)); // NOI18N
         jMenuItem_usuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons/usuario-icon.png"))); // NOI18N
         jMenuItem_usuario.setText("Usuário");
-        jMenu_cadastro.add(jMenuItem_usuario);
+        jMenuItem_usuario.setPreferredSize(new java.awt.Dimension(120, 30));
+        cadastroMenu.add(jMenuItem_usuario);
 
-        jMenuBar_menu.add(jMenu_cadastro);
+        menuBar.add(cadastroMenu);
 
-        jMenu_operacao.setText("Operação");
-        jMenuBar_menu.add(jMenu_operacao);
+        operacaoMenu.setText("Operação");
+        operacaoMenu.setFont(new java.awt.Font("Berlin Sans FB", 0, 20)); // NOI18N
+        operacaoMenu.setPreferredSize(new java.awt.Dimension(100, 24));
 
-        jMenu_relatorio.setText("Relatório");
-        jMenuBar_menu.add(jMenu_relatorio);
+        agendaItemMenu.setFont(new java.awt.Font("Berlin Sans FB", 0, 18)); // NOI18N
+        agendaItemMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons/agenda-icon.png"))); // NOI18N
+        agendaItemMenu.setText("Agenda");
+        agendaItemMenu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                agendaItemMenuActionPerformed(evt);
+            }
+        });
+        operacaoMenu.add(agendaItemMenu);
 
-        setJMenuBar(jMenuBar_menu);
+        menuBar.add(operacaoMenu);
+
+        relatorioMenu.setText("Relatório");
+        relatorioMenu.setFont(new java.awt.Font("Berlin Sans FB", 0, 20)); // NOI18N
+        relatorioMenu.setPreferredSize(new java.awt.Dimension(100, 24));
+        menuBar.add(relatorioMenu);
+
+        setJMenuBar(menuBar);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -89,6 +116,10 @@ public class Menu extends javax.swing.JFrame {
     private void jMenuItem_clienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem_clienteActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jMenuItem_clienteActionPerformed
+
+    private void agendaItemMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agendaItemMenuActionPerformed
+        controller.goAgenda();
+    }//GEN-LAST:event_agendaItemMenuActionPerformed
 
     /**
      * @param args the command line arguments
@@ -126,13 +157,14 @@ public class Menu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem agendaItemMenu;
+    private javax.swing.JMenu cadastroMenu;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JMenuBar jMenuBar_menu;
     private javax.swing.JMenuItem jMenuItem_cliente;
     private javax.swing.JMenuItem jMenuItem_servico;
     private javax.swing.JMenuItem jMenuItem_usuario;
-    private javax.swing.JMenu jMenu_cadastro;
-    private javax.swing.JMenu jMenu_operacao;
-    private javax.swing.JMenu jMenu_relatorio;
+    private javax.swing.JMenuBar menuBar;
+    private javax.swing.JMenu operacaoMenu;
+    private javax.swing.JMenu relatorioMenu;
     // End of variables declaration//GEN-END:variables
 }

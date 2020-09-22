@@ -20,8 +20,8 @@ public class LoginController {
     private final Login view;
     private final LoginHelper helper;
 
-    public LoginController() {
-        this.view = null;
+    public LoginController(Login view) {
+        this.view = view;
         this.helper = new LoginHelper(view);
     }
     

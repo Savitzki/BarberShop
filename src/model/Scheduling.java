@@ -67,6 +67,16 @@ public class Scheduling {
     public Date getData() {
         return data;
     }
+    
+//    data formatada
+    public String getDataFormated(){
+        return new SimpleDateFormat("dd/MM/yyy").format(data);
+    }
+    
+//    hora formatada
+    public String getHoraFormated(){
+        return new SimpleDateFormat("HH:mm").format(data);
+    }
 
     public void setData(Date data) {
         this.data = data;

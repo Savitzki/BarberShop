@@ -17,8 +17,8 @@ public class LoginHelper {
     
 //Obter modelo do usuario
     public User pullModel(){ 
-        String user = view.getJtf_user().getText();
-        String passwd = view.getJp_password().getText();
+        String user = view.getUserInput().getText();
+        String passwd = String.valueOf(view.getPasswdInput().getPassword());
         
         User model =  new User(0, user, passwd);
         return model;
@@ -28,13 +28,13 @@ public class LoginHelper {
         String nome = model.getNome();
         String senha = model.getSenha();
         
-        view.getJtf_user().setText(nome);
-        view.getJp_password().setText(senha);
+        view.getUserInput().setText(nome);
+        view.getPasswdInput().setText(senha);
     }
     
 //Limpar os componentes da view
     public void clearView(){
-        view.getJtf_user().setText("");
-        view.getJp_password().setText("");
+        view.getUserInput().setText("");
+        view.getPasswdInput().setText("");
     }
 }

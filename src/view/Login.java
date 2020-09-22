@@ -25,7 +25,8 @@ public class Login extends javax.swing.JFrame {
      */
     public Login() {
         initComponents();
-        controller = new LoginController();
+        setLocationRelativeTo(null);
+        controller = new LoginController(this);
         Database.inicia();
     }
 
@@ -41,8 +42,8 @@ public class Login extends javax.swing.JFrame {
         user_txt = new javax.swing.JLabel();
         pw_txt = new javax.swing.JLabel();
         login_txt = new javax.swing.JLabel();
-        jp_password = new javax.swing.JPasswordField();
-        jtf_user = new javax.swing.JTextField();
+        passwdInput = new javax.swing.JPasswordField();
+        userInput = new javax.swing.JTextField();
         entrar_bt = new javax.swing.JButton();
         bg = new javax.swing.JLabel();
 
@@ -64,16 +65,16 @@ public class Login extends javax.swing.JFrame {
         login_txt.setText("Login");
         getContentPane().add(login_txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 360, -1, -1));
 
-        jp_password.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
-        getContentPane().add(jp_password, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 570, 520, 40));
+        passwdInput.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
+        getContentPane().add(passwdInput, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 570, 520, 40));
 
-        jtf_user.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
-        jtf_user.addActionListener(new java.awt.event.ActionListener() {
+        userInput.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
+        userInput.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jtf_userActionPerformed(evt);
+                userInputActionPerformed(evt);
             }
         });
-        getContentPane().add(jtf_user, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 460, 520, 40));
+        getContentPane().add(userInput, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 460, 520, 40));
 
         entrar_bt.setBackground(new java.awt.Color(96, 218, 117));
         entrar_bt.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
@@ -92,12 +93,13 @@ public class Login extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jtf_userActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtf_userActionPerformed
+    private void userInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userInputActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jtf_userActionPerformed
+    }//GEN-LAST:event_userInputActionPerformed
 
     private void entrar_btActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entrar_btActionPerformed
-        this.controller.logIN();
+       controller.logIN();
+        
     }//GEN-LAST:event_entrar_btActionPerformed
 
     /**
@@ -143,22 +145,23 @@ public class Login extends javax.swing.JFrame {
         this.entrar_bt = entrar_bt;
     }
 
-    public JPasswordField getJp_password() {
-        return jp_password;
+    public JPasswordField getPasswdInput() {
+        return passwdInput;
     }
 
-    public void setJp_password(JPasswordField jp_password) {
-        this.jp_password = jp_password;
+    public void setPasswdInput(JPasswordField passwdInput) {
+        this.passwdInput = passwdInput;
     }
 
-    public JTextField getJtf_user() {
-        return jtf_user;
+    public JTextField getUserInput() {
+        return userInput;
     }
 
-    public void setJtf_user(JTextField jtf_user) {
-        this.jtf_user = jtf_user;
+    public void setUserInput(JTextField userInput) {
+        this.userInput = userInput;
     }
-    
+
+
     public void message(String message){
         JOptionPane.showMessageDialog(null, message);
     }
@@ -166,10 +169,10 @@ public class Login extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel bg;
     private javax.swing.JButton entrar_bt;
-    private javax.swing.JPasswordField jp_password;
-    private javax.swing.JTextField jtf_user;
     private javax.swing.JLabel login_txt;
+    private javax.swing.JPasswordField passwdInput;
     private javax.swing.JLabel pw_txt;
+    private javax.swing.JTextField userInput;
     private javax.swing.JLabel user_txt;
     // End of variables declaration//GEN-END:variables
 }
