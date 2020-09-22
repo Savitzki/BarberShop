@@ -4,18 +4,26 @@ package model;
  *
  * @author Marina Savitzki
  */
-public class Usuario extends Pessoa{
+public class User extends Person{
     
     private String senha;
     private String nivelDeAcesso;
 
-    public Usuario( int id, String nome, String senha, String nivelDeAcesso) {
+    public User(String senha, String nivelDeAcesso, int id, String nome) {
         super(id, nome);
         this.senha = senha;
         this.nivelDeAcesso = nivelDeAcesso;
     }
 
-    public Usuario(int id, String nome, String senha) {
+    public User(int id, String nome, char sexo ,String dtNascimento, String email , String rg, String telefone,String senha, String nivelDeAcesso ) {
+        super(id, nome, sexo, email, dtNascimento, rg, telefone);
+        this.senha = senha;
+        this.nivelDeAcesso = nivelDeAcesso;
+    }
+
+
+
+    public User(int id, String nome, String senha) {
         super(id, nome);
         this.senha = senha;
     }

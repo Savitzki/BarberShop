@@ -4,13 +4,13 @@ package model;
  *
  * @author Marina Savitzki
  */
-public class Servico {
+public class Service {
     
     private int id;
     private String descricao;
     private float valor;
 
-    public Servico(int id, String descricao, float valor) {
+    public Service(int id, String descricao, float valor) {
         this.id = id;
         this.descricao = descricao;
         this.valor = valor;

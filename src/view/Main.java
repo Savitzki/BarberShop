@@ -5,7 +5,7 @@
  */
 package view;
 
-import model.Servico;
+import model.Service;
 
 /**
  *
@@ -16,7 +16,7 @@ import model.Servico;
 public class Main {
 
     public static void main(String[] args) {
-        Servico servico = new Servico(1, "barba", 30);
+        Service servico = new Service(1, "barba", 30);
         
         
     }

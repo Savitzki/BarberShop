@@ -1,29 +1,43 @@
 package model;
-
-import java.util.Date;
-
-
 /**
  *
  * @author Marina Savitzki
  */
-public class Cliente extends Pessoa{
+public class Client extends Person{
     
 
     private String endereco;
     private String cep;
 
-    public Cliente(String endereco, String cep, int id, String nome, char sexo, String email, String dtNascimento, String rg, String telefone) {
+/**
+ * 
+ * @param id
+ * @param nome
+ * @param sexo
+ * @param email
+ * @param dtNascimento
+ * @param rg
+ * @param telefone
+ * @param endereco
+ * @param cep 
+ * Construtores
+ */
+    public Client( int id, String nome, char sexo,  String dtNascimento, String rg, String email,String telefone, String endereco, String cep) {
         super(id, nome, sexo, email, dtNascimento, rg, telefone);
         this.endereco = endereco;
         this.cep = cep;
     }
 
-    public Cliente(int id, String nome, String endereco, String cep) {
+    public Client(int id, String nome, String endereco, String cep) {
         super(id, nome);
         this.endereco = endereco;
         this.cep = cep;
     }
+    
+    /**
+     * Geters e Seters
+     * @return 
+     */
 
     public String getEndereco() {
         return endereco;
@@ -40,9 +54,6 @@ public class Cliente extends Pessoa{
     public void setCep(String cep) {
         this.cep = cep;
     }
-
-    
-
 
 
 }

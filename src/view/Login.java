@@ -5,17 +5,28 @@
  */
 package view;
 
+import controller.LoginController;
+import javax.swing.JButton;
+import javax.swing.JOptionPane;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
+import model.DAO.Database;
+
 /**
  *
  * @author Marina Savitzki
  */
 public class Login extends javax.swing.JFrame {
 
+    private final LoginController controller;
+
     /**
      * Creates new form Login
      */
     public Login() {
         initComponents();
+        controller = new LoginController();
+        Database.inicia();
     }
 
     /**
@@ -32,7 +43,7 @@ public class Login extends javax.swing.JFrame {
         login_txt = new javax.swing.JLabel();
         jp_password = new javax.swing.JPasswordField();
         jtf_user = new javax.swing.JTextField();
-        agendar_bt = new javax.swing.JButton();
+        entrar_bt = new javax.swing.JButton();
         bg = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -64,16 +75,16 @@ public class Login extends javax.swing.JFrame {
         });
         getContentPane().add(jtf_user, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 460, 520, 40));
 
-        agendar_bt.setBackground(new java.awt.Color(96, 218, 117));
-        agendar_bt.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
-        agendar_bt.setForeground(new java.awt.Color(51, 51, 51));
-        agendar_bt.setText("ENTRAR");
-        agendar_bt.addActionListener(new java.awt.event.ActionListener() {
+        entrar_bt.setBackground(new java.awt.Color(96, 218, 117));
+        entrar_bt.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
+        entrar_bt.setForeground(new java.awt.Color(51, 51, 51));
+        entrar_bt.setText("ENTRAR");
+        entrar_bt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                agendar_btActionPerformed(evt);
+                entrar_btActionPerformed(evt);
             }
         });
-        getContentPane().add(agendar_bt, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 640, 410, 60));
+        getContentPane().add(entrar_bt, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 640, 410, 60));
 
         bg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Prancheta 1.png"))); // NOI18N
         getContentPane().add(bg, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -85,9 +96,9 @@ public class Login extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jtf_userActionPerformed
 
-    private void agendar_btActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agendar_btActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_agendar_btActionPerformed
+    private void entrar_btActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entrar_btActionPerformed
+        this.controller.logIN();
+    }//GEN-LAST:event_entrar_btActionPerformed
 
     /**
      * @param args the command line arguments
@@ -124,9 +135,37 @@ public class Login extends javax.swing.JFrame {
         });
     }
 
+    public JButton getEntrar_bt() {
+        return entrar_bt;
+    }
+
+    public void setEntrar_bt(JButton entrar_bt) {
+        this.entrar_bt = entrar_bt;
+    }
+
+    public JPasswordField getJp_password() {
+        return jp_password;
+    }
+
+    public void setJp_password(JPasswordField jp_password) {
+        this.jp_password = jp_password;
+    }
+
+    public JTextField getJtf_user() {
+        return jtf_user;
+    }
+
+    public void setJtf_user(JTextField jtf_user) {
+        this.jtf_user = jtf_user;
+    }
+    
+    public void message(String message){
+        JOptionPane.showMessageDialog(null, message);
+    }
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton agendar_bt;
     private javax.swing.JLabel bg;
+    private javax.swing.JButton entrar_bt;
     private javax.swing.JPasswordField jp_password;
     private javax.swing.JTextField jtf_user;
     private javax.swing.JLabel login_txt;

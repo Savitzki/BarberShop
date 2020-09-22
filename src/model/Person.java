@@ -10,23 +10,31 @@ import java.util.logging.Logger;
  *
  * @author Marina Savitzki
  */
-public abstract class Pessoa {
+public abstract class Person {
     
     protected int id;
     protected String nome;
     protected char sexo;
     protected String email;
     protected Date dtNascimento;
-//    protected String cpf;
     protected String rg;
     protected String telefone;
 
-    public Pessoa(int id, String nome) {
+    public Person(int id, String nome) {
         this.id = id;
         this.nome = nome;
     }
-
-    public Pessoa(int id, String nome, char sexo, String email, String dtNascimento, String rg, String telefone) {
+/**
+ * 
+ * @param id
+ * @param nome
+ * @param sexo
+ * @param dtNascimento
+ * @param rg
+ * @param email
+ * @param telefone 
+ */
+    public Person(int id, String nome, char sexo,  String dtNascimento, String rg, String email, String telefone) {
         this.id = id;
         this.nome = nome;
         this.sexo = sexo;
@@ -34,7 +42,7 @@ public abstract class Pessoa {
         try {
             this.dtNascimento = new SimpleDateFormat("dd/MM/yyyy").parse(dtNascimento);
         } catch (ParseException ex) {
-            Logger.getLogger(Agendamento.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Scheduling.class.getName()).log(Level.SEVERE, null, ex);
         }
         this.rg = rg;
         this.telefone = telefone;
