@@ -8,6 +8,7 @@ import model.DAO.SchedulingDAO;
 import model.DAO.ServiceDAO;
 import model.Scheduling;
 import model.Service;
+import servico.Correio;
 import view.Agenda;
 
 /**
@@ -61,8 +62,13 @@ public class AgendaController {
         Scheduling agendamento = helper.getModel();
         new SchedulingDAO().insert(agendamento);
         
+        Correio newCorreio = new Correio();
+        newCorreio.notifyEmail(agendamento);
+        
         refreshTable();
         helper.clearView();
+        
+        
     }
     
 }

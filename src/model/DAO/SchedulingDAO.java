@@ -18,8 +18,6 @@ public class SchedulingDAO {
             agendamento.setId(proximoId());
             Database.agendamento.add(agendamento);
         }
-        
-        
     }
     
     /**

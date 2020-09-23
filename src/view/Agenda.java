@@ -70,7 +70,6 @@ public class Agenda extends javax.swing.JFrame {
         id_txt.setText("Observação");
         getContentPane().add(id_txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 110, 140, 40));
 
-        id_tf.setEditable(false);
         id_tf.setFont(new java.awt.Font("Berlin Sans FB", 0, 18)); // NOI18N
         getContentPane().add(id_tf, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 110, 260, 40));
 

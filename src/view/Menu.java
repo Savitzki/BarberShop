@@ -83,6 +83,7 @@ public class Menu extends javax.swing.JFrame {
         agendaItemMenu.setFont(new java.awt.Font("Berlin Sans FB", 0, 18)); // NOI18N
         agendaItemMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons/agenda-icon.png"))); // NOI18N
         agendaItemMenu.setText("Agenda");
+        agendaItemMenu.setPreferredSize(new java.awt.Dimension(120, 30));
         agendaItemMenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 agendaItemMenuActionPerformed(evt);
