@@ -62,13 +62,11 @@ public class AgendaController {
         Scheduling agendamento = helper.getModel();
         new SchedulingDAO().insert(agendamento);
         
-        Correio newCorreio = new Correio();
-        newCorreio.notifyEmail(agendamento);
+//        Correio newCorreio = new Correio();
+//        newCorreio.notifyEmail(agendamento);
         
         refreshTable();
         helper.clearView();
-        
-        
     }
     
 }

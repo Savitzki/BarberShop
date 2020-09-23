@@ -88,7 +88,7 @@ public class AgendaHelper implements InterfaceHelper{
         String dataHora = data +" "+ hora;
         String obs = viewAgenda.getObservTxtArea().getText();
         
-        Scheduling agendamento = new Scheduling(id, client, service, valor, data, obs);
+        Scheduling agendamento = new Scheduling(id, client, service, valor, dataHora, obs);
         return agendamento;
     }
 

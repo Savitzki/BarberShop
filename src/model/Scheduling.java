@@ -25,7 +25,7 @@ public class Scheduling {
         this.servico = servico;
         this.valor = valor;
         try {
-            this.data = new SimpleDateFormat("dd/MM/yyyy").parse(data);
+            this.data = new SimpleDateFormat("dd/MM/yyyy HH:mm").parse(data);
         } catch (ParseException ex) {
             Logger.getLogger(Scheduling.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -36,8 +36,6 @@ public class Scheduling {
         this.observacao = observacao;
     }
     
-    
-
     public int getId() {
         return id;
     }

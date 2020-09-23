@@ -21,7 +21,7 @@ public class MenuController {
     }
     
     public void goAgenda(){
-        Agenda agenda = new Agenda();
+        Agenda agenda = new Agenda(null, false);
         agenda.setVisible(true);
         
     }

@@ -52,17 +52,20 @@ public class Login extends javax.swing.JFrame {
         bg = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setAlwaysOnTop(true);
+        setUndecorated(true);
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         user_txt.setFont(new java.awt.Font("Berlin Sans FB", 0, 36)); // NOI18N
         user_txt.setForeground(new java.awt.Color(204, 204, 204));
         user_txt.setText("Usuário");
-        getContentPane().add(user_txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 410, 400, 30));
+        getContentPane().add(user_txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 410, 400, 30));
 
         pw_txt.setFont(new java.awt.Font("Berlin Sans FB", 0, 36)); // NOI18N
         pw_txt.setForeground(new java.awt.Color(204, 204, 204));
         pw_txt.setText("Senha");
-        getContentPane().add(pw_txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 520, 400, 30));
+        getContentPane().add(pw_txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 520, 400, 30));
 
         login_txt.setFont(new java.awt.Font("Berlin Sans FB", 0, 48)); // NOI18N
         login_txt.setForeground(new java.awt.Color(204, 204, 204));
@@ -72,7 +75,7 @@ public class Login extends javax.swing.JFrame {
 
         passwdInput.setBackground(new java.awt.Color(242, 242, 242));
         passwdInput.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
-        getContentPane().add(passwdInput, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 560, 520, 50));
+        getContentPane().add(passwdInput, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 560, 520, 50));
 
         userInput.setBackground(new java.awt.Color(242, 242, 242));
         userInput.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
@@ -81,9 +84,9 @@ public class Login extends javax.swing.JFrame {
                 userInputActionPerformed(evt);
             }
         });
-        getContentPane().add(userInput, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 450, 520, 50));
+        getContentPane().add(userInput, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 450, 520, 50));
 
-        entrar_bt1.setBackground(new java.awt.Color(255, 51, 51));
+        entrar_bt1.setBackground(new java.awt.Color(207, 72, 72));
         entrar_bt1.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
         entrar_bt1.setForeground(new java.awt.Color(51, 51, 51));
         entrar_bt1.setText("CANCELAR");
@@ -93,19 +96,20 @@ public class Login extends javax.swing.JFrame {
                 entrar_bt1ActionPerformed(evt);
             }
         });
-        getContentPane().add(entrar_bt1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 720, 410, 60));
+        getContentPane().add(entrar_bt1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 720, 250, 60));
 
-        entrar_bt.setBackground(new java.awt.Color(0, 204, 51));
+        entrar_bt.setBackground(new java.awt.Color(108, 207, 105));
         entrar_bt.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
         entrar_bt.setForeground(new java.awt.Color(51, 51, 51));
         entrar_bt.setText("ENTRAR");
         entrar_bt.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        entrar_bt.setPreferredSize(new java.awt.Dimension(135, 37));
         entrar_bt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 entrar_btActionPerformed(evt);
             }
         });
-        getContentPane().add(entrar_bt, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 640, 410, 60));
+        getContentPane().add(entrar_bt, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 720, 250, 60));
 
         bg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Login.png"))); // NOI18N
         getContentPane().add(bg, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -123,7 +127,8 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_entrar_btActionPerformed
 
     private void entrar_bt1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entrar_bt1ActionPerformed
-        JOptionPane.showConfirmDialog(null, "Deseja cancelar?");
+//        JOptionPane.showConfirmDialog(null, "Deseja cancelar?");
+        this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.dispose();
     }//GEN-LAST:event_entrar_bt1ActionPerformed
 

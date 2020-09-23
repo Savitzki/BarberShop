@@ -16,20 +16,21 @@ import javax.swing.JTextField;
  *
  * @author Marina Savitzki
  */
-public class Agenda extends javax.swing.JFrame {
+public class Agenda extends javax.swing.JDialog {
 
     private final AgendaController controller;
-
     /**
-     * Creates new form Agenda
+     * Creates new form AgendaDialog
+     * @param parent
+     * @param modal
      */
-    public Agenda() {
+    public Agenda(java.awt.Frame parent, boolean modal) {
+        super(parent, modal);
         initComponents();
-        setLocationRelativeTo(null);
         this.controller = new AgendaController(this);
         iniciar();
+        setLocationRelativeTo(null);
     }
-    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -40,51 +41,45 @@ public class Agenda extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        id_txt = new javax.swing.JLabel();
         id_tf = new javax.swing.JTextField();
+        id_txt1 = new javax.swing.JLabel();
         cliente_txt = new javax.swing.JLabel();
         cliente_cb = new javax.swing.JComboBox<>();
-        servico_txt = new javax.swing.JLabel();
         servico_cb = new javax.swing.JComboBox<>();
+        servico_txt = new javax.swing.JLabel();
         valor_txt = new javax.swing.JLabel();
-        dataFtf = new javax.swing.JFormattedTextField();
         valorTf = new javax.swing.JTextField();
+        dataFtf = new javax.swing.JFormattedTextField();
         data_txt = new javax.swing.JLabel();
-        hora_ftf = new javax.swing.JFormattedTextField();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        observTxtArea = new javax.swing.JTextArea();
         hora_txt = new javax.swing.JLabel();
-        id_txt1 = new javax.swing.JLabel();
+        hora_ftf = new javax.swing.JFormattedTextField();
         jScrollPane2 = new javax.swing.JScrollPane();
         listaCliente_tb = new javax.swing.JTable();
         agendar_bt = new javax.swing.JButton();
-        label_fundo_fosco = new javax.swing.JLabel();
-        label_img_fundo = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        observTxtArea = new javax.swing.JTextArea();
+        id_txt = new javax.swing.JLabel();
+        bg = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(1300, 1000));
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        id_txt.setFont(new java.awt.Font("Berlin Sans FB", 0, 24)); // NOI18N
-        id_txt.setForeground(new java.awt.Color(255, 255, 255));
-        id_txt.setText("Observação");
-        getContentPane().add(id_txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 110, 140, 40));
-
         id_tf.setFont(new java.awt.Font("Berlin Sans FB", 0, 18)); // NOI18N
-        getContentPane().add(id_tf, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 110, 260, 40));
+        getContentPane().add(id_tf, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 40, 300, 40));
+
+        id_txt1.setFont(new java.awt.Font("Berlin Sans FB", 0, 24)); // NOI18N
+        id_txt1.setForeground(new java.awt.Color(255, 255, 255));
+        id_txt1.setText("ID");
+        getContentPane().add(id_txt1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 40, 90, 40));
 
         cliente_txt.setFont(new java.awt.Font("Berlin Sans FB", 0, 24)); // NOI18N
         cliente_txt.setForeground(new java.awt.Color(255, 255, 255));
         cliente_txt.setText("Cliente");
-        getContentPane().add(cliente_txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 170, 90, 40));
+        getContentPane().add(cliente_txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 100, 90, 40));
 
         cliente_cb.setFont(new java.awt.Font("Berlin Sans FB", 0, 18)); // NOI18N
-        getContentPane().add(cliente_cb, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 170, 260, 40));
-
-        servico_txt.setFont(new java.awt.Font("Berlin Sans FB", 0, 24)); // NOI18N
-        servico_txt.setForeground(new java.awt.Color(255, 255, 255));
-        servico_txt.setText("Serviço");
-        getContentPane().add(servico_txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 230, 90, 40));
+        getContentPane().add(cliente_cb, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 100, 300, 40));
 
         servico_cb.setFont(new java.awt.Font("Berlin Sans FB", 0, 18)); // NOI18N
         servico_cb.addItemListener(new java.awt.event.ItemListener() {
@@ -92,12 +87,20 @@ public class Agenda extends javax.swing.JFrame {
                 servico_cbItemStateChanged(evt);
             }
         });
-        getContentPane().add(servico_cb, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 230, 260, 40));
+        getContentPane().add(servico_cb, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 160, 300, 40));
+
+        servico_txt.setFont(new java.awt.Font("Berlin Sans FB", 0, 24)); // NOI18N
+        servico_txt.setForeground(new java.awt.Color(255, 255, 255));
+        servico_txt.setText("Serviço");
+        getContentPane().add(servico_txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 160, 90, 40));
 
         valor_txt.setFont(new java.awt.Font("Berlin Sans FB", 0, 24)); // NOI18N
         valor_txt.setForeground(new java.awt.Color(255, 255, 255));
         valor_txt.setText("Valor R$");
-        getContentPane().add(valor_txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 290, 90, 40));
+        getContentPane().add(valor_txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 220, 90, 40));
+
+        valorTf.setFont(new java.awt.Font("Berlin Sans FB", 0, 18)); // NOI18N
+        getContentPane().add(valorTf, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 220, 300, 40));
 
         try {
             dataFtf.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
@@ -110,15 +113,17 @@ public class Agenda extends javax.swing.JFrame {
                 dataFtfActionPerformed(evt);
             }
         });
-        getContentPane().add(dataFtf, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 350, 260, 40));
-
-        valorTf.setFont(new java.awt.Font("Berlin Sans FB", 0, 18)); // NOI18N
-        getContentPane().add(valorTf, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 290, 260, 40));
+        getContentPane().add(dataFtf, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 280, 300, 40));
 
         data_txt.setFont(new java.awt.Font("Berlin Sans FB", 0, 24)); // NOI18N
         data_txt.setForeground(new java.awt.Color(255, 255, 255));
         data_txt.setText("Data");
-        getContentPane().add(data_txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 350, 90, 40));
+        getContentPane().add(data_txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 280, 90, 40));
+
+        hora_txt.setFont(new java.awt.Font("Berlin Sans FB", 0, 24)); // NOI18N
+        hora_txt.setForeground(new java.awt.Color(255, 255, 255));
+        hora_txt.setText("Hora");
+        getContentPane().add(hora_txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 340, 90, 40));
 
         try {
             hora_ftf.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##:##")));
@@ -131,32 +136,12 @@ public class Agenda extends javax.swing.JFrame {
                 hora_ftfActionPerformed(evt);
             }
         });
-        getContentPane().add(hora_ftf, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 410, 260, 40));
-
-        observTxtArea.setColumns(20);
-        observTxtArea.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
-        observTxtArea.setRows(5);
-        jScrollPane1.setViewportView(observTxtArea);
-
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 110, 590, 290));
-
-        hora_txt.setFont(new java.awt.Font("Berlin Sans FB", 0, 24)); // NOI18N
-        hora_txt.setForeground(new java.awt.Color(255, 255, 255));
-        hora_txt.setText("Hora");
-        getContentPane().add(hora_txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 410, 90, 40));
-
-        id_txt1.setFont(new java.awt.Font("Berlin Sans FB", 0, 24)); // NOI18N
-        id_txt1.setForeground(new java.awt.Color(255, 255, 255));
-        id_txt1.setText("ID");
-        getContentPane().add(id_txt1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 110, 90, 40));
+        getContentPane().add(hora_ftf, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 340, 300, 40));
 
         listaCliente_tb.setFont(new java.awt.Font("Berlin Sans FB", 0, 18)); // NOI18N
         listaCliente_tb.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null}
+
             },
             new String [] {
                 "ID", "Cliente", "Serviço", "Valor", "Data", "Hora", "Observação"
@@ -177,15 +162,10 @@ public class Agenda extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        listaCliente_tb.setToolTipText("");
         jScrollPane2.setViewportView(listaCliente_tb);
-        if (listaCliente_tb.getColumnModel().getColumnCount() > 0) {
-            listaCliente_tb.getColumnModel().getColumn(0).setMinWidth(50);
-            listaCliente_tb.getColumnModel().getColumn(0).setMaxWidth(150);
-            listaCliente_tb.getColumnModel().getColumn(3).setMinWidth(100);
-            listaCliente_tb.getColumnModel().getColumn(3).setMaxWidth(150);
-        }
 
-        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 480, 1110, 390));
+        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 410, 1260, 390));
 
         agendar_bt.setBackground(new java.awt.Color(153, 153, 255));
         agendar_bt.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
@@ -196,17 +176,29 @@ public class Agenda extends javax.swing.JFrame {
                 agendar_btActionPerformed(evt);
             }
         });
-        getContentPane().add(agendar_bt, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 410, 590, 50));
+        getContentPane().add(agendar_bt, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 340, 590, 50));
 
-        label_fundo_fosco.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Agenda-PainelFundo.png"))); // NOI18N
-        label_fundo_fosco.setMaximumSize(new java.awt.Dimension(1300, 1010));
-        getContentPane().add(label_fundo_fosco, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -60, -1, 1060));
+        observTxtArea.setColumns(20);
+        observTxtArea.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
+        observTxtArea.setRows(5);
+        jScrollPane1.setViewportView(observTxtArea);
 
-        label_img_fundo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/agenda.png"))); // NOI18N
-        getContentPane().add(label_img_fundo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 40, 590, 290));
+
+        id_txt.setFont(new java.awt.Font("Berlin Sans FB", 0, 24)); // NOI18N
+        id_txt.setForeground(new java.awt.Color(255, 255, 255));
+        id_txt.setText("Observação");
+        getContentPane().add(id_txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 40, 140, 40));
+
+        bg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Agenda.png"))); // NOI18N
+        getContentPane().add(bg, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1510, 880));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void servico_cbItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_servico_cbItemStateChanged
+//        this.controller.refreshValue();
+    }//GEN-LAST:event_servico_cbItemStateChanged
 
     private void dataFtfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dataFtfActionPerformed
         // TODO add your handling code here:
@@ -216,13 +208,9 @@ public class Agenda extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_hora_ftfActionPerformed
 
-    private void servico_cbItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_servico_cbItemStateChanged
-        this.controller.refreshValue();
-    }//GEN-LAST:event_servico_cbItemStateChanged
-
     private void agendar_btActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agendar_btActionPerformed
-//        realiza o agendamento do cliente.
-        this.controller.schedule();
+        //        realiza o agendamento do cliente.
+//        this.controller.schedule();
     }//GEN-LAST:event_agendar_btActionPerformed
 
     /**
@@ -241,27 +229,33 @@ public class Agenda extends javax.swing.JFrame {
                     break;
                 }
             }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Agenda.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Agenda.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Agenda.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(Agenda.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        //</editor-fold>
+        
+        //</editor-fold>
+        //</editor-fold>
 
-        /* Create and display the form */
+        /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Agenda().setVisible(true);
+                Agenda dialog = new Agenda(new javax.swing.JFrame(), true);
+                dialog.addWindowListener(new java.awt.event.WindowAdapter() {
+                    @Override
+                    public void windowClosing(java.awt.event.WindowEvent e) {
+                        System.exit(0);
+                    }
+                });
+                dialog.setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton agendar_bt;
+    private javax.swing.JLabel bg;
     private javax.swing.JComboBox<String> cliente_cb;
     private javax.swing.JLabel cliente_txt;
     private javax.swing.JFormattedTextField dataFtf;
@@ -273,8 +267,6 @@ public class Agenda extends javax.swing.JFrame {
     private javax.swing.JLabel id_txt1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JLabel label_fundo_fosco;
-    private javax.swing.JLabel label_img_fundo;
     private javax.swing.JTable listaCliente_tb;
     private javax.swing.JTextArea observTxtArea;
     private javax.swing.JComboBox<String> servico_cb;
@@ -282,11 +274,11 @@ public class Agenda extends javax.swing.JFrame {
     private javax.swing.JTextField valorTf;
     private javax.swing.JLabel valor_txt;
     // End of variables declaration//GEN-END:variables
-
-    private void iniciar() {
+  private void iniciar() {
         this.controller.refreshTable();
         this.controller.refreshClient();
         this.controller.refreshService();
+        this.controller.refreshValue();
     }
 
     public JTable getListaCliente_tb() {
@@ -353,7 +345,5 @@ public class Agenda extends javax.swing.JFrame {
         this.observTxtArea = observTxtArea;
     }
     
-    
-    
-    
 }
+

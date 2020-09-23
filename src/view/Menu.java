@@ -1,6 +1,16 @@
 package view;
 
 import controller.MenuController;
+import java.awt.Color;
+import java.awt.Component;
+import java.awt.Graphics;
+import javax.swing.JComponent;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
+import javax.swing.JPopupMenu;
+import javax.swing.MenuElement;
+import javax.swing.plaf.basic.BasicMenuBarUI;
 
 /**
  *
@@ -17,6 +27,7 @@ public class Menu extends javax.swing.JFrame {
         initComponents();
 //        iniciar a tela principal maximizada
         setExtendedState(MAXIMIZED_BOTH);
+        customizeMenuBar(menuBar);
         this.controller = new MenuController(this);
     }
 
@@ -29,7 +40,17 @@ public class Menu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        updateButton = new javax.swing.JButton();
+        deleteButton = new javax.swing.JButton();
+        newButton = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        listaCliente_tb = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
+        footer = new javax.swing.JPanel();
+        logOff_bt = new javax.swing.JLabel();
+        userTxt = new javax.swing.JLabel();
+        userLogin = new javax.swing.JLabel();
+        bg = new javax.swing.JLabel();
         menuBar = new javax.swing.JMenuBar();
         cadastroMenu = new javax.swing.JMenu();
         jMenuItem_cliente = new javax.swing.JMenuItem();
@@ -40,9 +61,101 @@ public class Menu extends javax.swing.JFrame {
         relatorioMenu = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Prancheta 2.png"))); // NOI18N
-        jLabel1.setText("jLabel1");
+        updateButton.setFont(new java.awt.Font("Berlin Sans FB", 0, 24)); // NOI18N
+        updateButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons/icons8-alterar-24.png"))); // NOI18N
+        updateButton.setText("Alterar");
+        updateButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        getContentPane().add(updateButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(1260, 780, 270, 50));
+
+        deleteButton.setFont(new java.awt.Font("Berlin Sans FB", 0, 24)); // NOI18N
+        deleteButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons/icons8-excluir-24.png"))); // NOI18N
+        deleteButton.setText("Excluir");
+        deleteButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        getContentPane().add(deleteButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 780, 270, 50));
+
+        newButton.setFont(new java.awt.Font("Berlin Sans FB", 0, 24)); // NOI18N
+        newButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons/icons8-soma-24.png"))); // NOI18N
+        newButton.setText("Novo");
+        newButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        newButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                newButtonActionPerformed(evt);
+            }
+        });
+        getContentPane().add(newButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 780, 270, 50));
+
+        listaCliente_tb.setFont(new java.awt.Font("Berlin Sans FB", 0, 18)); // NOI18N
+        listaCliente_tb.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "ID", "Cliente", "Serviço", "Valor", "Data", "Hora", "Observação"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.Float.class, java.lang.Object.class, java.lang.Object.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane2.setViewportView(listaCliente_tb);
+
+        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 130, 1210, 630));
+
+        jLabel1.setFont(new java.awt.Font("Berlin Sans FB", 0, 26)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("Agendamentos");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 70, 960, 50));
+
+        footer.setBackground(new java.awt.Color(164, 164, 164));
+        footer.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        logOff_bt.setBackground(new java.awt.Color(255, 255, 255));
+        logOff_bt.setForeground(new java.awt.Color(255, 255, 255));
+        logOff_bt.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        logOff_bt.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons/icons8-logout-arredondado-para-baixo-24.png"))); // NOI18N
+        logOff_bt.setToolTipText("LogOff");
+        logOff_bt.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        logOff_bt.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        logOff_bt.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                logOff_btMouseClicked(evt);
+            }
+        });
+        footer.add(logOff_bt, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 10, 60, 80));
+
+        userTxt.setFont(new java.awt.Font("Berlin Sans FB", 0, 24)); // NOI18N
+        userTxt.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        userTxt.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons/icons8-usuário-verificado-masculino-24.png"))); // NOI18N
+        userTxt.setText("Usuário autenticado: ");
+        footer.add(userTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 240, 80));
+
+        userLogin.setFont(new java.awt.Font("Berlin Sans FB", 0, 24)); // NOI18N
+        userLogin.setForeground(new java.awt.Color(255, 255, 255));
+        userLogin.setText("Barbeiro");
+        footer.add(userLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 0, 340, 80));
+
+        getContentPane().add(footer, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 910, 1950, 100));
+
+        bg.setBackground(new java.awt.Color(233, 118, 45));
+        bg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Menu.png"))); // NOI18N
+        bg.setText(" ");
+        getContentPane().add(bg, new org.netbeans.lib.awtextra.AbsoluteConstraints(-1, -70, 1990, -1));
 
         menuBar.setFont(new java.awt.Font("Buxton Sketch", 0, 24)); // NOI18N
         menuBar.setPreferredSize(new java.awt.Dimension(235, 40));
@@ -100,17 +213,6 @@ public class Menu extends javax.swing.JFrame {
 
         setJMenuBar(menuBar);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -121,6 +223,18 @@ public class Menu extends javax.swing.JFrame {
     private void agendaItemMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agendaItemMenuActionPerformed
         controller.goAgenda();
     }//GEN-LAST:event_agendaItemMenuActionPerformed
+
+    private void logOff_btMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logOff_btMouseClicked
+       /**
+        * Deslogar usuario
+        * voltar para a tela de login
+        * fechar a tela principal
+        */
+    }//GEN-LAST:event_logOff_btMouseClicked
+
+    private void newButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newButtonActionPerformed
+       controller.goAgenda();
+    }//GEN-LAST:event_newButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -159,13 +273,70 @@ public class Menu extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem agendaItemMenu;
+    private javax.swing.JLabel bg;
     private javax.swing.JMenu cadastroMenu;
+    private javax.swing.JButton deleteButton;
+    private javax.swing.JPanel footer;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JMenuItem jMenuItem_cliente;
     private javax.swing.JMenuItem jMenuItem_servico;
     private javax.swing.JMenuItem jMenuItem_usuario;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTable listaCliente_tb;
+    private javax.swing.JLabel logOff_bt;
     private javax.swing.JMenuBar menuBar;
+    private javax.swing.JButton newButton;
     private javax.swing.JMenu operacaoMenu;
     private javax.swing.JMenu relatorioMenu;
+    private javax.swing.JButton updateButton;
+    private javax.swing.JLabel userLogin;
+    private javax.swing.JLabel userTxt;
     // End of variables declaration//GEN-END:variables
+
+
+    private void customizeMenuBar(JMenuBar menuBar) {
+
+    menuBar.setUI(new BasicMenuBarUI() {
+
+        @Override
+        public void paint(Graphics g, JComponent c) {
+            g.setColor(Color.black);
+            g.fillRect(0, 0, c.getWidth(), c.getHeight());
+        }
+
+    });
+
+    MenuElement[] menus = menuBar.getSubElements();
+
+    for (MenuElement menuElement : menus) {
+
+        JMenu menu = (JMenu) menuElement.getComponent();
+        changeComponentColors(menu);
+        menu.setOpaque(true);
+
+        MenuElement[] menuElements = menu.getSubElements();
+
+        for (MenuElement popupMenuElement : menuElements) {
+
+            JPopupMenu popupMenu = (JPopupMenu) popupMenuElement.getComponent();
+            popupMenu.setBorder(null);
+
+            MenuElement[] menuItens = popupMenuElement.getSubElements();
+
+            for (MenuElement menuItemElement : menuItens) {
+
+                JMenuItem menuItem = (JMenuItem) menuItemElement.getComponent();
+                changeComponentColors(menuItem);
+                menuItem.setOpaque(true);
+
+            }
+        }
+    }
+}
+
+private void changeComponentColors(Component comp) {
+    comp.setBackground(Color.black);
+    comp.setForeground(Color.white);
+}
+    
 }
