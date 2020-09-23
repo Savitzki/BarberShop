@@ -2,8 +2,12 @@ package controller;
 
 import controller.Helper.AgendaHelper;
 import java.util.ArrayList;
+import model.Client;
+import model.DAO.ClientDAO;
 import model.DAO.SchedulingDAO;
+import model.DAO.ServiceDAO;
 import model.Scheduling;
+import model.Service;
 import view.Agenda;
 
 /**
@@ -28,6 +32,33 @@ public class AgendaController {
 //        preencher tabela
         helper.fillTable(agendamentos);
     }
-
+/**
+ * Atualizando comboBox de clientes da tela agenda
+ */
+    public void refreshClient(){
+        ClientDAO clientDAO = new ClientDAO();
+        ArrayList<Client> clients = clientDAO.selectAll();
+        
+//        preenchendo o comboBox
+        helper.fillClients(clients);
+    }
+    public void refreshService(){
+        
+        ServiceDAO serviceDAO = new ServiceDAO();
+        ArrayList<Service> services = serviceDAO.selectAll();
+        
+        helper.fillService(services);
+    }
+    
+    public void refreshValue(){
+        Service service = helper.getService();
+        
+        helper.setValue(service.getValor());
+    }
+        
+    
+    public void schedule(){
+        
+    }
     
 }

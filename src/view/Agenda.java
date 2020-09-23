@@ -6,7 +6,9 @@
 package view;
 
 import controller.AgendaController;
+import javax.swing.JComboBox;
 import javax.swing.JTable;
+import javax.swing.JTextField;
 
 /**
  *
@@ -25,6 +27,7 @@ public class Agenda extends javax.swing.JFrame {
         this.controller = new AgendaController(this);
         iniciar();
     }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -43,8 +46,8 @@ public class Agenda extends javax.swing.JFrame {
         servico_cb = new javax.swing.JComboBox<>();
         valor_txt = new javax.swing.JLabel();
         valor_ftf = new javax.swing.JFormattedTextField();
+        valorTf = new javax.swing.JTextField();
         data_txt = new javax.swing.JLabel();
-        data_ftf = new javax.swing.JFormattedTextField();
         hora_ftf = new javax.swing.JFormattedTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
@@ -56,75 +59,95 @@ public class Agenda extends javax.swing.JFrame {
         label_fundo_fosco = new javax.swing.JLabel();
         label_img_fundo = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(1300, 1000));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         id_txt.setFont(new java.awt.Font("Berlin Sans FB", 0, 24)); // NOI18N
         id_txt.setForeground(new java.awt.Color(255, 255, 255));
         id_txt.setText("Observação");
-        getContentPane().add(id_txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 190, 140, 40));
-        getContentPane().add(id_tf, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 190, 260, 40));
+        getContentPane().add(id_txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 110, 140, 40));
+
+        id_tf.setEditable(false);
+        id_tf.setFont(new java.awt.Font("Berlin Sans FB", 0, 18)); // NOI18N
+        getContentPane().add(id_tf, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 110, 260, 40));
 
         cliente_txt.setFont(new java.awt.Font("Berlin Sans FB", 0, 24)); // NOI18N
         cliente_txt.setForeground(new java.awt.Color(255, 255, 255));
         cliente_txt.setText("Cliente");
-        getContentPane().add(cliente_txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 250, 90, 40));
+        getContentPane().add(cliente_txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 170, 90, 40));
 
-        getContentPane().add(cliente_cb, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 250, 260, 40));
+        cliente_cb.setFont(new java.awt.Font("Berlin Sans FB", 0, 18)); // NOI18N
+        getContentPane().add(cliente_cb, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 170, 260, 40));
 
         servico_txt.setFont(new java.awt.Font("Berlin Sans FB", 0, 24)); // NOI18N
         servico_txt.setForeground(new java.awt.Color(255, 255, 255));
         servico_txt.setText("Serviço");
-        getContentPane().add(servico_txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 310, 90, 40));
+        getContentPane().add(servico_txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 230, 90, 40));
 
-        getContentPane().add(servico_cb, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 310, 260, 40));
+        servico_cb.setFont(new java.awt.Font("Berlin Sans FB", 0, 18)); // NOI18N
+        servico_cb.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                servico_cbItemStateChanged(evt);
+            }
+        });
+        getContentPane().add(servico_cb, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 230, 260, 40));
 
         valor_txt.setFont(new java.awt.Font("Berlin Sans FB", 0, 24)); // NOI18N
         valor_txt.setForeground(new java.awt.Color(255, 255, 255));
         valor_txt.setText("Valor R$");
-        getContentPane().add(valor_txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 370, 90, 40));
+        getContentPane().add(valor_txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 290, 90, 40));
 
+        try {
+            valor_ftf.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        valor_ftf.setFont(new java.awt.Font("Berlin Sans FB", 0, 18)); // NOI18N
         valor_ftf.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 valor_ftfActionPerformed(evt);
             }
         });
-        getContentPane().add(valor_ftf, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 430, 260, 40));
+        getContentPane().add(valor_ftf, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 350, 260, 40));
+
+        valorTf.setFont(new java.awt.Font("Berlin Sans FB", 0, 18)); // NOI18N
+        getContentPane().add(valorTf, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 290, 260, 40));
 
         data_txt.setFont(new java.awt.Font("Berlin Sans FB", 0, 24)); // NOI18N
         data_txt.setForeground(new java.awt.Color(255, 255, 255));
         data_txt.setText("Data");
-        getContentPane().add(data_txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 430, 90, 40));
+        getContentPane().add(data_txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 350, 90, 40));
 
-        data_ftf.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                data_ftfActionPerformed(evt);
-            }
-        });
-        getContentPane().add(data_ftf, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 370, 260, 40));
-
+        try {
+            hora_ftf.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##:##")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        hora_ftf.setFont(new java.awt.Font("Berlin Sans FB", 0, 18)); // NOI18N
         hora_ftf.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 hora_ftfActionPerformed(evt);
             }
         });
-        getContentPane().add(hora_ftf, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 490, 260, 40));
+        getContentPane().add(hora_ftf, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 410, 260, 40));
 
         jTextArea1.setColumns(20);
+        jTextArea1.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
         jTextArea1.setRows(5);
         jScrollPane1.setViewportView(jTextArea1);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 190, 590, 290));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 110, 590, 290));
 
         hora_txt.setFont(new java.awt.Font("Berlin Sans FB", 0, 24)); // NOI18N
         hora_txt.setForeground(new java.awt.Color(255, 255, 255));
         hora_txt.setText("Hora");
-        getContentPane().add(hora_txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 490, 90, 40));
+        getContentPane().add(hora_txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 410, 90, 40));
 
         id_txt1.setFont(new java.awt.Font("Berlin Sans FB", 0, 24)); // NOI18N
         id_txt1.setForeground(new java.awt.Color(255, 255, 255));
         id_txt1.setText("ID");
-        getContentPane().add(id_txt1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 190, 90, 40));
+        getContentPane().add(id_txt1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 110, 90, 40));
 
         listaCliente_tb.setFont(new java.awt.Font("Berlin Sans FB", 0, 18)); // NOI18N
         listaCliente_tb.setModel(new javax.swing.table.DefaultTableModel(
@@ -161,16 +184,22 @@ public class Agenda extends javax.swing.JFrame {
             listaCliente_tb.getColumnModel().getColumn(3).setMaxWidth(150);
         }
 
-        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 560, 1110, 360));
+        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 480, 1110, 390));
 
         agendar_bt.setBackground(new java.awt.Color(153, 153, 255));
         agendar_bt.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
         agendar_bt.setForeground(new java.awt.Color(51, 51, 51));
         agendar_bt.setText("AGENDAR");
-        getContentPane().add(agendar_bt, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 490, 590, 50));
+        agendar_bt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                agendar_btActionPerformed(evt);
+            }
+        });
+        getContentPane().add(agendar_bt, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 410, 590, 50));
 
         label_fundo_fosco.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Agenda-PainelFundo.png"))); // NOI18N
-        getContentPane().add(label_fundo_fosco, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        label_fundo_fosco.setMaximumSize(new java.awt.Dimension(1300, 1010));
+        getContentPane().add(label_fundo_fosco, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -60, -1, 1060));
 
         label_img_fundo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/agenda.png"))); // NOI18N
         getContentPane().add(label_img_fundo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -182,13 +211,18 @@ public class Agenda extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_valor_ftfActionPerformed
 
-    private void data_ftfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_data_ftfActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_data_ftfActionPerformed
-
     private void hora_ftfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hora_ftfActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_hora_ftfActionPerformed
+
+    private void servico_cbItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_servico_cbItemStateChanged
+        this.controller.refreshValue();
+    }//GEN-LAST:event_servico_cbItemStateChanged
+
+    private void agendar_btActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agendar_btActionPerformed
+//        realiza o agendamento do cliente.
+        this.controller.schedule();
+    }//GEN-LAST:event_agendar_btActionPerformed
 
     /**
      * @param args the command line arguments
@@ -229,7 +263,6 @@ public class Agenda extends javax.swing.JFrame {
     private javax.swing.JButton agendar_bt;
     private javax.swing.JComboBox<String> cliente_cb;
     private javax.swing.JLabel cliente_txt;
-    private javax.swing.JFormattedTextField data_ftf;
     private javax.swing.JLabel data_txt;
     private javax.swing.JFormattedTextField hora_ftf;
     private javax.swing.JLabel hora_txt;
@@ -244,12 +277,15 @@ public class Agenda extends javax.swing.JFrame {
     private javax.swing.JTable listaCliente_tb;
     private javax.swing.JComboBox<String> servico_cb;
     private javax.swing.JLabel servico_txt;
+    private javax.swing.JTextField valorTf;
     private javax.swing.JFormattedTextField valor_ftf;
     private javax.swing.JLabel valor_txt;
     // End of variables declaration//GEN-END:variables
 
     private void iniciar() {
         this.controller.refreshTable();
+        this.controller.refreshClient();
+        this.controller.refreshService();
     }
 
     public JTable getListaCliente_tb() {
@@ -259,6 +295,32 @@ public class Agenda extends javax.swing.JFrame {
     public void setListaCliente_tb(JTable listaCliente_tb) {
         this.listaCliente_tb = listaCliente_tb;
     }
+
+    public JComboBox<String> getCliente_cb() {
+        return cliente_cb;
+    }
+
+    public void setCliente_cb(JComboBox<String> cliente_cb) {
+        this.cliente_cb = cliente_cb;
+    }
+
+    public JComboBox<String> getServico_cb() {
+        return servico_cb;
+    }
+
+    public void setServico_cb(JComboBox<String> servico_cb) {
+        this.servico_cb = servico_cb;
+    }
+
+    public JTextField getValorTf() {
+        return valorTf;
+    }
+
+    public void setValorTf(JTextField valorTf) {
+        this.valorTf = valorTf;
+    }
+    
+    
     
     
 }
