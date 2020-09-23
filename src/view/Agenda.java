@@ -190,7 +190,7 @@ public class Agenda extends javax.swing.JDialog {
         id_txt.setText("Observação");
         getContentPane().add(id_txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 40, 140, 40));
 
-        bg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Agenda.png"))); // NOI18N
+        bg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Agendamento.png"))); // NOI18N
         getContentPane().add(bg, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1510, 880));
 
         pack();
