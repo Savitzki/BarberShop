@@ -7,7 +7,9 @@ package view;
 
 import controller.AgendaController;
 import javax.swing.JComboBox;
+import javax.swing.JFormattedTextField;
 import javax.swing.JTable;
+import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
 /**
@@ -45,12 +47,12 @@ public class Agenda extends javax.swing.JFrame {
         servico_txt = new javax.swing.JLabel();
         servico_cb = new javax.swing.JComboBox<>();
         valor_txt = new javax.swing.JLabel();
-        valor_ftf = new javax.swing.JFormattedTextField();
+        dataFtf = new javax.swing.JFormattedTextField();
         valorTf = new javax.swing.JTextField();
         data_txt = new javax.swing.JLabel();
         hora_ftf = new javax.swing.JFormattedTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        observTxtArea = new javax.swing.JTextArea();
         hora_txt = new javax.swing.JLabel();
         id_txt1 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
@@ -99,17 +101,17 @@ public class Agenda extends javax.swing.JFrame {
         getContentPane().add(valor_txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 290, 90, 40));
 
         try {
-            valor_ftf.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
+            dataFtf.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
-        valor_ftf.setFont(new java.awt.Font("Berlin Sans FB", 0, 18)); // NOI18N
-        valor_ftf.addActionListener(new java.awt.event.ActionListener() {
+        dataFtf.setFont(new java.awt.Font("Berlin Sans FB", 0, 18)); // NOI18N
+        dataFtf.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                valor_ftfActionPerformed(evt);
+                dataFtfActionPerformed(evt);
             }
         });
-        getContentPane().add(valor_ftf, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 350, 260, 40));
+        getContentPane().add(dataFtf, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 350, 260, 40));
 
         valorTf.setFont(new java.awt.Font("Berlin Sans FB", 0, 18)); // NOI18N
         getContentPane().add(valorTf, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 290, 260, 40));
@@ -132,10 +134,10 @@ public class Agenda extends javax.swing.JFrame {
         });
         getContentPane().add(hora_ftf, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 410, 260, 40));
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        observTxtArea.setColumns(20);
+        observTxtArea.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
+        observTxtArea.setRows(5);
+        jScrollPane1.setViewportView(observTxtArea);
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 110, 590, 290));
 
@@ -207,9 +209,9 @@ public class Agenda extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void valor_ftfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_valor_ftfActionPerformed
+    private void dataFtfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dataFtfActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_valor_ftfActionPerformed
+    }//GEN-LAST:event_dataFtfActionPerformed
 
     private void hora_ftfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hora_ftfActionPerformed
         // TODO add your handling code here:
@@ -263,6 +265,7 @@ public class Agenda extends javax.swing.JFrame {
     private javax.swing.JButton agendar_bt;
     private javax.swing.JComboBox<String> cliente_cb;
     private javax.swing.JLabel cliente_txt;
+    private javax.swing.JFormattedTextField dataFtf;
     private javax.swing.JLabel data_txt;
     private javax.swing.JFormattedTextField hora_ftf;
     private javax.swing.JLabel hora_txt;
@@ -271,14 +274,13 @@ public class Agenda extends javax.swing.JFrame {
     private javax.swing.JLabel id_txt1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JLabel label_fundo_fosco;
     private javax.swing.JLabel label_img_fundo;
     private javax.swing.JTable listaCliente_tb;
+    private javax.swing.JTextArea observTxtArea;
     private javax.swing.JComboBox<String> servico_cb;
     private javax.swing.JLabel servico_txt;
     private javax.swing.JTextField valorTf;
-    private javax.swing.JFormattedTextField valor_ftf;
     private javax.swing.JLabel valor_txt;
     // End of variables declaration//GEN-END:variables
 
@@ -318,6 +320,38 @@ public class Agenda extends javax.swing.JFrame {
 
     public void setValorTf(JTextField valorTf) {
         this.valorTf = valorTf;
+    }
+
+    public JFormattedTextField getHora_ftf() {
+        return hora_ftf;
+    }
+
+    public void setHora_ftf(JFormattedTextField hora_ftf) {
+        this.hora_ftf = hora_ftf;
+    }
+
+    public JTextField getId_tf() {
+        return id_tf;
+    }
+
+    public void setId_tf(JTextField id_tf) {
+        this.id_tf = id_tf;
+    }
+
+    public JFormattedTextField getDataFtf() {
+        return dataFtf;
+    }
+
+    public void setDataFtf(JFormattedTextField dataFtf) {
+        this.dataFtf = dataFtf;
+    }
+
+    public JTextArea getObservTxtArea() {
+        return observTxtArea;
+    }
+
+    public void setObservTxtArea(JTextArea observTxtArea) {
+        this.observTxtArea = observTxtArea;
     }
     
     

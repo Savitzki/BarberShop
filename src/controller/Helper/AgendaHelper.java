@@ -1,7 +1,6 @@
 package controller.Helper;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.table.DefaultTableModel;
 import model.Client;
@@ -13,7 +12,7 @@ import view.Agenda;
  *
  * @author Marina Savitzki
  */
-public class AgendaHelper {
+public class AgendaHelper implements InterfaceHelper{
     
     private final Agenda viewAgenda;
 
@@ -63,6 +62,10 @@ public class AgendaHelper {
         
     }
 
+    public Client getClient() {
+        return (Client) viewAgenda.getCliente_cb().getSelectedItem();
+    }
+    
     public Service getService() {
         return (Service) viewAgenda.getServico_cb().getSelectedItem();
     }
@@ -70,6 +73,31 @@ public class AgendaHelper {
     public void setValue(float valor) {
         viewAgenda.getValorTf().setText(valor + "") ;
         
+    }
+
+    @Override
+    public Scheduling getModel() {
+        String idString = viewAgenda.getId_tf().getText();
+        int id = Integer.parseInt(idString);
+        Client client = getClient();
+        Service service = getService();
+        String valorString = viewAgenda.getValorTf().getText();
+        float valor = Float.parseFloat(valorString);
+        String data = viewAgenda.getDataFtf().getText();
+        String hora = viewAgenda.getHora_ftf().getText();
+        String dataHora = data +" "+ hora;
+        String obs = viewAgenda.getObservTxtArea().getText();
+        
+        Scheduling agendamento = new Scheduling(id, client, service, valor, data, obs);
+        return agendamento;
+    }
+
+    @Override
+    public void clearView() {
+        viewAgenda.getId_tf().setText("0");
+        viewAgenda.getDataFtf().setText("");
+        viewAgenda.getHora_ftf().setText("");
+        viewAgenda.getObservTxtArea().setText("");
     }
     
     

@@ -58,7 +58,11 @@ public class AgendaController {
         
     
     public void schedule(){
+        Scheduling agendamento = helper.getModel();
+        new SchedulingDAO().insert(agendamento);
         
+        refreshTable();
+        helper.clearView();
     }
     
 }

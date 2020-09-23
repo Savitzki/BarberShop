@@ -7,7 +7,7 @@ import view.Login;
  *
  * @author Marina Savitzki
  */
-public class LoginHelper {
+public class LoginHelper implements InterfaceHelper{
     
     private final Login view;
 
@@ -33,8 +33,18 @@ public class LoginHelper {
     }
     
 //Limpar os componentes da view
+
+    /**
+     *Metodos implementados da interface
+     */
+    @Override
     public void clearView(){
         view.getUserInput().setText("");
         view.getPasswdInput().setText("");
+    }
+
+    @Override
+    public Login getModel() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

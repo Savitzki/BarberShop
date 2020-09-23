@@ -19,7 +19,7 @@ public class Scheduling {
     private Date data;
     private String observacao;
 
-    public Scheduling(int id, Client cliente, Service servico, float valor, String data, String observacao) {
+    public Scheduling(int id, Client cliente, Service servico, float valor, String data) {
         this.id = id;
         this.cliente = cliente;
         this.servico = servico;
@@ -29,8 +29,14 @@ public class Scheduling {
         } catch (ParseException ex) {
             Logger.getLogger(Scheduling.class.getName()).log(Level.SEVERE, null, ex);
         }
+    }
+
+    public Scheduling(int id, Client cliente, Service servico, float valor, String data, String observacao) {
+        this(id, cliente, servico, valor, data);
         this.observacao = observacao;
     }
+    
+    
 
     public int getId() {
         return id;
