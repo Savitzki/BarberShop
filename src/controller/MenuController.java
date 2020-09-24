@@ -1,23 +1,15 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package controller;
 
 import controller.Helper.MenuHelper;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 import javax.swing.JOptionPane;
-import javax.swing.table.DefaultTableModel;
-import model.DAO.SchedulingDAO;
-import model.Scheduling;
 import model.login.DadosLogin;
 import view.Agenda;
 import view.Login;
 import view.Menu;
+import view.UserList;
 
 /**
  *
@@ -34,7 +26,7 @@ public class MenuController implements ActionListener {
         this.helper = new MenuHelper(menu);
         helper.refreshTableMenu();
         menuPrincipal.getNomeUsuario().setText(dadoLogin.toString());
-        
+
     }
 
     public void goAgenda() {
@@ -51,6 +43,10 @@ public class MenuController implements ActionListener {
         if (e.getSource() == menuPrincipal.getServiceButton()) {
         }
         if (e.getSource() == menuPrincipal.getUserButton()) {
+//           Instanciar a tela de usuarios
+            UserList userView = new UserList(null, true);
+            UserController controller = new UserController(userView);
+            userView.setVisible(true);
         }
         if (e.getSource() == menuPrincipal.getReportButton()) {
         }
@@ -72,7 +68,6 @@ public class MenuController implements ActionListener {
             if (op == 0) {
                 menuPrincipal.dispose();
                 menuPrincipal.setDefaultCloseOperation(EXIT_ON_CLOSE);
-
             }
         }
 
@@ -85,7 +80,5 @@ public class MenuController implements ActionListener {
         if (e.getSource() == menuPrincipal.getUpdateButton()) {
         }
     }
-
-  
 
 }

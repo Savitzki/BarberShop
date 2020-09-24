@@ -5,7 +5,7 @@
  */
 package view;
 
-import controller.AgendaController;
+import controller.SchedulingController;
 import javax.swing.JComboBox;
 import javax.swing.JFormattedTextField;
 import javax.swing.JTable;
@@ -18,7 +18,7 @@ import javax.swing.JTextField;
  */
 public class Agenda extends javax.swing.JDialog {
 
-    private final AgendaController controller;
+    private final SchedulingController controller;
     /**
      * Creates new form AgendaDialog
      * @param parent
@@ -27,7 +27,7 @@ public class Agenda extends javax.swing.JDialog {
     public Agenda(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
-        this.controller = new AgendaController(this);
+        this.controller = new SchedulingController(this);
         iniciar();
         setLocationRelativeTo(null);
     }
@@ -205,8 +205,8 @@ public class Agenda extends javax.swing.JDialog {
         id_txt.setText("Observação");
         getContentPane().add(id_txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 40, 140, 40));
 
-        bg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Agendamento.png"))); // NOI18N
-        getContentPane().add(bg, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1510, 880));
+        bg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Prancheta 3.png"))); // NOI18N
+        getContentPane().add(bg, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1560, 900));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

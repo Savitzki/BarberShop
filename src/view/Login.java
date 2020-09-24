@@ -97,9 +97,9 @@ public class Login extends javax.swing.JFrame {
         getContentPane().add(userInput, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 450, 520, 50));
 
         cancelButton.setBackground(new java.awt.Color(204, 204, 204));
-        cancelButton.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
+        cancelButton.setFont(new java.awt.Font("Berlin Sans FB", 0, 24)); // NOI18N
         cancelButton.setForeground(new java.awt.Color(51, 51, 51));
-        cancelButton.setText("CANCELAR");
+        cancelButton.setText("Cancelar");
         cancelButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         cancelButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -109,9 +109,9 @@ public class Login extends javax.swing.JFrame {
         getContentPane().add(cancelButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 720, 250, 60));
 
         entrar_bt.setBackground(new java.awt.Color(153, 153, 255));
-        entrar_bt.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
+        entrar_bt.setFont(new java.awt.Font("Berlin Sans FB", 0, 24)); // NOI18N
         entrar_bt.setForeground(new java.awt.Color(51, 51, 51));
-        entrar_bt.setText("ENTRAR");
+        entrar_bt.setText("Entrar");
         entrar_bt.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         entrar_bt.setPreferredSize(new java.awt.Dimension(135, 37));
         entrar_bt.addActionListener(new java.awt.event.ActionListener() {
@@ -121,7 +121,7 @@ public class Login extends javax.swing.JFrame {
         });
         getContentPane().add(entrar_bt, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 720, 250, 60));
 
-        bg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/login.png"))); // NOI18N
+        bg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Prancheta 1.png"))); // NOI18N
         getContentPane().add(bg, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
