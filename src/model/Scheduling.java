@@ -18,8 +18,9 @@ public class Scheduling {
     private float valor;
     private Date data;
     private String observacao;
+    private Date dataSistema;
 
-    public Scheduling(int id, Client cliente, Service servico, float valor, String data) {
+    public Scheduling(int id, Client cliente, Service servico, float valor, String data, Date dataSistema) {
         this.id = id;
         this.cliente = cliente;
         this.servico = servico;
@@ -29,10 +30,11 @@ public class Scheduling {
         } catch (ParseException ex) {
             Logger.getLogger(Scheduling.class.getName()).log(Level.SEVERE, null, ex);
         }
+        this.dataSistema = dataSistema;
     }
 
-    public Scheduling(int id, Client cliente, Service servico, float valor, String data, String observacao) {
-        this(id, cliente, servico, valor, data);
+    public Scheduling(int id, Client cliente, Service servico, float valor, String data, Date dataSistema, String observacao) {
+        this(id, cliente, servico, valor, data, dataSistema);
         this.observacao = observacao;
     }
     
@@ -70,6 +72,14 @@ public class Scheduling {
 
     public Date getData() {
         return data;
+    }
+
+    public String getDataSistema() {
+        return new SimpleDateFormat("dd/MM/yyy HH:mm:ss").format(dataSistema);
+    }
+
+    public void setDataSistema(Date dataSistema) {
+        this.dataSistema = dataSistema;
     }
     
 //    data formatada

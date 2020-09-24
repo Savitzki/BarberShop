@@ -1,6 +1,7 @@
 package model.DAO;
 
 import java.util.ArrayList;
+import java.util.Date;
 import model.Client;
 import model.Scheduling;
 import model.Service;
@@ -50,9 +51,9 @@ public class Database {
         Service servico5 = new Service(5, "Sombrancelhas", 10);
         Service servico6 = new Service(6, "Penteados", 3);
 
-        Scheduling agendamento1 = new Scheduling(1, cliente1, servico2, 30, "14/07/2018 09:30", "");
-        Scheduling agendamento2 = new Scheduling(2, cliente3, servico4, 40, "14/07/2018 10:00", "");
-        Scheduling agendamento3 = new Scheduling(3, cliente4, servico1, 18, "14/07/2018 10:30", "");
+        Scheduling agendamento1 = new Scheduling(1, cliente1, servico2, 30, "14/07/2018 09:30", new Date(),"");
+        Scheduling agendamento2 = new Scheduling(2, cliente3, servico4, 40, "14/07/2018 10:00", new Date(), "");
+        Scheduling agendamento3 = new Scheduling(3, cliente4, servico1, 18, "14/07/2018 10:30", new Date(),"");
         
         //Adiciona Elementos na lista
         usuario.add(usuario1);

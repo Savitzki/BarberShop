@@ -8,7 +8,6 @@ import model.DAO.SchedulingDAO;
 import model.DAO.ServiceDAO;
 import model.Scheduling;
 import model.Service;
-import servico.Correio;
 import view.Agenda;
 
 /**
@@ -24,7 +23,7 @@ public class AgendaController {
         this.viewAgenda = viewAgenda;
         this.helper = new AgendaHelper(viewAgenda);
     }
-    
+  
     public void refreshTable(){
         
         SchedulingDAO agendamentoDAO = new SchedulingDAO();

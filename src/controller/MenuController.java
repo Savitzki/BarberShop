@@ -5,10 +5,15 @@
  */
 package controller;
 
+import controller.Helper.MenuHelper;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+import model.DAO.SchedulingDAO;
+import model.Scheduling;
 import view.Agenda;
 import view.Login;
 import view.Menu;
@@ -20,9 +25,12 @@ import view.Menu;
 public class MenuController implements ActionListener {
 
     private final Menu menuPrincipal;
+    private final MenuHelper helper;
 
     public MenuController(Menu menu) {
         this.menuPrincipal = menu;
+        this.helper = new MenuHelper(menu);
+        helper.refreshTableMenu();
     }
 
     public void goAgenda() {
@@ -56,8 +64,12 @@ public class MenuController implements ActionListener {
         if (e.getSource() == menuPrincipal.getHelpButton()) {
         }
         if (e.getSource() == menuPrincipal.getQuitButton()) {
-            JOptionPane.showConfirmDialog(null, "Tem certeza que deseja fechar o sistema?");
-           menuPrincipal.setDefaultCloseOperation(EXIT_ON_CLOSE);
+            int op = JOptionPane.showConfirmDialog(null, "Tem certeza que deseja fechar o sistema?");
+            if (op == 0) {
+                menuPrincipal.dispose();
+                menuPrincipal.setDefaultCloseOperation(EXIT_ON_CLOSE);
+
+            }
         }
 
 //        botoes agendamento
@@ -69,5 +81,7 @@ public class MenuController implements ActionListener {
         if (e.getSource() == menuPrincipal.getUpdateButton()) {
         }
     }
+
+  
 
 }

@@ -2,7 +2,6 @@ package view;
 
 import controller.MenuController;
 import javax.swing.JButton;
-import javax.swing.JOptionPane;
 import javax.swing.JTable;
 
 /**
@@ -212,6 +211,13 @@ public class Menu extends javax.swing.JFrame {
             }
         });
         jScrollPane2.setViewportView(listaCliente_tb);
+        if (listaCliente_tb.getColumnModel().getColumnCount() > 0) {
+            listaCliente_tb.getColumnModel().getColumn(0).setPreferredWidth(30);
+            listaCliente_tb.getColumnModel().getColumn(1).setPreferredWidth(150);
+            listaCliente_tb.getColumnModel().getColumn(4).setPreferredWidth(50);
+            listaCliente_tb.getColumnModel().getColumn(5).setPreferredWidth(20);
+            listaCliente_tb.getColumnModel().getColumn(6).setPreferredWidth(150);
+        }
 
         getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 130, 1210, 630));
 

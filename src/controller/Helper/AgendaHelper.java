@@ -1,6 +1,7 @@
 package controller.Helper;
 
 import java.util.ArrayList;
+import java.util.Date;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.table.DefaultTableModel;
 import model.Client;
@@ -86,9 +87,10 @@ public class AgendaHelper implements InterfaceHelper{
         String data = viewAgenda.getDataFtf().getText();
         String hora = viewAgenda.getHora_ftf().getText();
         String dataHora = data +" "+ hora;
+        Date dataSis = new Date();
         String obs = viewAgenda.getObservTxtArea().getText();
         
-        Scheduling agendamento = new Scheduling(id, client, service, valor, dataHora, obs);
+        Scheduling agendamento = new Scheduling(id, client, service, valor, dataHora,dataSis, obs);
         return agendamento;
     }
 
