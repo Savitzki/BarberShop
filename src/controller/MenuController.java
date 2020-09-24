@@ -54,7 +54,7 @@ public class MenuController implements ActionListener {
 //        botoes footer da view
         if (e.getSource() == menuPrincipal.getLogoutButton()) {
             int option = JOptionPane.showConfirmDialog(menuPrincipal, "Deseja realmente SAIR?");
-            System.out.println(option);
+//            System.out.println(option);
             if (option == 0) {
                 Login login = new Login();
                 menuPrincipal.dispose();

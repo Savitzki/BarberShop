@@ -6,6 +6,7 @@
 package controller;
 
 import controller.Helper.LoginHelper;
+import java.awt.event.KeyEvent;
 import model.DAO.UserDAO;
 import model.User;
 import view.Login;
@@ -19,6 +20,7 @@ public class LoginController {
     
     private final Login view;
     private final LoginHelper helper;
+    private static String login;
 
     public LoginController(Login view) {
         this.view = view;
@@ -29,6 +31,7 @@ public class LoginController {
         User user = helper.pullModel();
         
         UserDAO userDAO = new UserDAO();
+        login = user.getNome();
         User usuarioAutenticado = userDAO.selectPorNomeESenha(user);
         
         if(usuarioAutenticado != null){
@@ -40,7 +43,14 @@ public class LoginController {
         }
             
     }
-    
+
+    public static String getLogin() {
+        return login;
+    }
+
+    public static void setLogin(String login) {
+        LoginController.login = login;
+    }
     
     
 }

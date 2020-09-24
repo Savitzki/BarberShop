@@ -42,7 +42,6 @@ public class Login extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        lembrarSenhaCheckBox = new javax.swing.JCheckBox();
         esqueciMinhaSenha = new javax.swing.JLabel();
         user_txt = new javax.swing.JLabel();
         pw_txt = new javax.swing.JLabel();
@@ -54,20 +53,8 @@ public class Login extends javax.swing.JFrame {
         bg = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setAlwaysOnTop(true);
-        setUndecorated(true);
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        lembrarSenhaCheckBox.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
-        lembrarSenhaCheckBox.setForeground(new java.awt.Color(204, 204, 204));
-        lembrarSenhaCheckBox.setText("Lembrar minha senha");
-        lembrarSenhaCheckBox.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                lembrarSenhaCheckBoxActionPerformed(evt);
-            }
-        });
-        getContentPane().add(lembrarSenhaCheckBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 620, 240, -1));
 
         esqueciMinhaSenha.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
         esqueciMinhaSenha.setForeground(new java.awt.Color(204, 204, 204));
@@ -155,10 +142,6 @@ public class Login extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_cancelButtonActionPerformed
 
-    private void lembrarSenhaCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lembrarSenhaCheckBoxActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_lembrarSenhaCheckBoxActionPerformed
-
     private void esqueciMinhaSenhaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_esqueciMinhaSenhaMouseClicked
         /**
          * recuperar a senha
@@ -237,7 +220,6 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JButton cancelButton;
     private javax.swing.JButton entrar_bt;
     private javax.swing.JLabel esqueciMinhaSenha;
-    private javax.swing.JCheckBox lembrarSenhaCheckBox;
     private javax.swing.JLabel login_txt;
     private javax.swing.JPasswordField passwdInput;
     private javax.swing.JLabel pw_txt;

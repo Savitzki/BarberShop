@@ -34,6 +34,7 @@ public class Menu extends javax.swing.JFrame {
         gerenciaTxt = new javax.swing.JLabel();
         nomeUsuario = new javax.swing.JLabel();
         usuarioAutenticadoTxt = new javax.swing.JLabel();
+        borderTxt = new javax.swing.JLabel();
         logoutButton = new javax.swing.JButton();
         helpButton = new javax.swing.JButton();
         quitButton = new javax.swing.JButton();
@@ -71,6 +72,9 @@ public class Menu extends javax.swing.JFrame {
         usuarioAutenticadoTxt.setText("Usuário autenticado:");
         getContentPane().add(usuarioAutenticadoTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 980, 220, 40));
 
+        borderTxt.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
+        getContentPane().add(borderTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(21, 966, 480, 80));
+
         logoutButton.setFont(new java.awt.Font("Berlin Sans FB", 0, 24)); // NOI18N
         logoutButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons/icons8-logout-arredondado-para-baixo-24.png"))); // NOI18N
         logoutButton.setText("Logout");
@@ -102,7 +106,7 @@ public class Menu extends javax.swing.JFrame {
                 quitButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(quitButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(1730, 980, 200, 50));
+        getContentPane().add(quitButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(1680, 980, 200, 50));
 
         reportButton.setFont(new java.awt.Font("Berlin Sans FB", 0, 24)); // NOI18N
         reportButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons/relatorioTrabalho24-icon.png"))); // NOI18N
@@ -313,6 +317,7 @@ public class Menu extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel agendamentoTxt;
     private javax.swing.JLabel bg;
+    private javax.swing.JLabel borderTxt;
     private javax.swing.JButton clientButton;
     private javax.swing.JButton deleteButton;
     private javax.swing.JButton financesButton;
