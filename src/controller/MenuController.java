@@ -5,26 +5,69 @@
  */
 package controller;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import static javax.swing.JFrame.EXIT_ON_CLOSE;
+import javax.swing.JOptionPane;
 import view.Agenda;
+import view.Login;
 import view.Menu;
 
 /**
  *
  * @author Marina Savitzki
  */
-public class MenuController {
-    
+public class MenuController implements ActionListener {
+
     private final Menu menuPrincipal;
 
     public MenuController(Menu menu) {
         this.menuPrincipal = menu;
     }
-    
-    public void goAgenda(){
+
+    public void goAgenda() {
         Agenda agenda = new Agenda(null, true);
         agenda.setVisible(true);
-        
+
     }
-        
-    
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+//        botoes de gerenciamento
+        if (e.getSource() == menuPrincipal.getClientButton()) {
+        }
+        if (e.getSource() == menuPrincipal.getServiceButton()) {
+        }
+        if (e.getSource() == menuPrincipal.getUserButton()) {
+        }
+        if (e.getSource() == menuPrincipal.getReportButton()) {
+        }
+
+//        botoes footer da view
+        if (e.getSource() == menuPrincipal.getLogoutButton()) {
+            int option = JOptionPane.showConfirmDialog(menuPrincipal, "Deseja realmente SAIR?");
+            System.out.println(option);
+            if (option == 0) {
+                Login login = new Login();
+                menuPrincipal.dispose();
+                login.setVisible(true);
+            }
+        }
+        if (e.getSource() == menuPrincipal.getHelpButton()) {
+        }
+        if (e.getSource() == menuPrincipal.getQuitButton()) {
+            JOptionPane.showConfirmDialog(null, "Tem certeza que deseja fechar o sistema?");
+           menuPrincipal.setDefaultCloseOperation(EXIT_ON_CLOSE);
+        }
+
+//        botoes agendamento
+        if (e.getSource() == menuPrincipal.getNewButton()) {
+            goAgenda();
+        }
+        if (e.getSource() == menuPrincipal.getDeleteButton()) {
+        }
+        if (e.getSource() == menuPrincipal.getUpdateButton()) {
+        }
+    }
+
 }

@@ -49,7 +49,7 @@ public class Login extends javax.swing.JFrame {
         login_txt = new javax.swing.JLabel();
         passwdInput = new javax.swing.JPasswordField();
         userInput = new javax.swing.JTextField();
-        entrar_bt1 = new javax.swing.JButton();
+        cancelButton = new javax.swing.JButton();
         entrar_bt = new javax.swing.JButton();
         bg = new javax.swing.JLabel();
 
@@ -80,28 +80,28 @@ public class Login extends javax.swing.JFrame {
         });
         getContentPane().add(esqueciMinhaSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 620, 140, -1));
 
-        user_txt.setFont(new java.awt.Font("Berlin Sans FB", 0, 36)); // NOI18N
+        user_txt.setFont(new java.awt.Font("Berlin Sans FB", 0, 30)); // NOI18N
         user_txt.setForeground(new java.awt.Color(204, 204, 204));
         user_txt.setText("Usuário");
         getContentPane().add(user_txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 410, 400, 30));
 
-        pw_txt.setFont(new java.awt.Font("Berlin Sans FB", 0, 36)); // NOI18N
+        pw_txt.setFont(new java.awt.Font("Berlin Sans FB", 0, 30)); // NOI18N
         pw_txt.setForeground(new java.awt.Color(204, 204, 204));
         pw_txt.setText("Senha");
         getContentPane().add(pw_txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 520, 400, 30));
 
-        login_txt.setFont(new java.awt.Font("Berlin Sans FB", 0, 55)); // NOI18N
+        login_txt.setFont(new java.awt.Font("Berlin Sans FB", 0, 40)); // NOI18N
         login_txt.setForeground(new java.awt.Color(204, 204, 204));
         login_txt.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         login_txt.setText("Login");
-        getContentPane().add(login_txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 270, 510, -1));
+        getContentPane().add(login_txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 330, 510, -1));
 
         passwdInput.setBackground(new java.awt.Color(242, 242, 242));
-        passwdInput.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        passwdInput.setFont(new java.awt.Font("Arial", 0, 26)); // NOI18N
         getContentPane().add(passwdInput, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 560, 520, 50));
 
         userInput.setBackground(new java.awt.Color(242, 242, 242));
-        userInput.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        userInput.setFont(new java.awt.Font("Arial", 0, 26)); // NOI18N
         userInput.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 userInputActionPerformed(evt);
@@ -109,19 +109,19 @@ public class Login extends javax.swing.JFrame {
         });
         getContentPane().add(userInput, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 450, 520, 50));
 
-        entrar_bt1.setBackground(new java.awt.Color(207, 72, 72));
-        entrar_bt1.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
-        entrar_bt1.setForeground(new java.awt.Color(51, 51, 51));
-        entrar_bt1.setText("CANCELAR");
-        entrar_bt1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        entrar_bt1.addActionListener(new java.awt.event.ActionListener() {
+        cancelButton.setBackground(new java.awt.Color(204, 204, 204));
+        cancelButton.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
+        cancelButton.setForeground(new java.awt.Color(51, 51, 51));
+        cancelButton.setText("CANCELAR");
+        cancelButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        cancelButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                entrar_bt1ActionPerformed(evt);
+                cancelButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(entrar_bt1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 720, 250, 60));
+        getContentPane().add(cancelButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 720, 250, 60));
 
-        entrar_bt.setBackground(new java.awt.Color(108, 207, 105));
+        entrar_bt.setBackground(new java.awt.Color(153, 153, 255));
         entrar_bt.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
         entrar_bt.setForeground(new java.awt.Color(51, 51, 51));
         entrar_bt.setText("ENTRAR");
@@ -134,7 +134,7 @@ public class Login extends javax.swing.JFrame {
         });
         getContentPane().add(entrar_bt, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 720, 250, 60));
 
-        bg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/login2.png"))); // NOI18N
+        bg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/login.png"))); // NOI18N
         getContentPane().add(bg, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
@@ -149,11 +149,11 @@ public class Login extends javax.swing.JFrame {
 
     }//GEN-LAST:event_entrar_btActionPerformed
 
-    private void entrar_bt1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entrar_bt1ActionPerformed
+    private void cancelButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelButtonActionPerformed
 //        JOptionPane.showConfirmDialog(null, "Deseja cancelar?");
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.dispose();
-    }//GEN-LAST:event_entrar_bt1ActionPerformed
+    }//GEN-LAST:event_cancelButtonActionPerformed
 
     private void lembrarSenhaCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lembrarSenhaCheckBoxActionPerformed
         // TODO add your handling code here:
@@ -234,8 +234,8 @@ public class Login extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel bg;
+    private javax.swing.JButton cancelButton;
     private javax.swing.JButton entrar_bt;
-    private javax.swing.JButton entrar_bt1;
     private javax.swing.JLabel esqueciMinhaSenha;
     private javax.swing.JCheckBox lembrarSenhaCheckBox;
     private javax.swing.JLabel login_txt;

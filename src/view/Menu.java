@@ -1,7 +1,10 @@
 package view;
 
 import controller.MenuController;
+import javax.swing.JButton;
 import javax.swing.JOptionPane;
+import javax.swing.JTable;
+
 /**
  *
  * @author Marina Savitzki
@@ -35,8 +38,8 @@ public class Menu extends javax.swing.JFrame {
         logoutButton = new javax.swing.JButton();
         helpButton = new javax.swing.JButton();
         quitButton = new javax.swing.JButton();
-        relatorioButton = new javax.swing.JButton();
-        paymentButton = new javax.swing.JButton();
+        reportButton = new javax.swing.JButton();
+        financesButton = new javax.swing.JButton();
         userButton = new javax.swing.JButton();
         serviceButton = new javax.swing.JButton();
         clientButton = new javax.swing.JButton();
@@ -100,30 +103,30 @@ public class Menu extends javax.swing.JFrame {
                 quitButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(quitButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 840, 370, 50));
+        getContentPane().add(quitButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(1730, 980, 200, 50));
 
-        relatorioButton.setFont(new java.awt.Font("Berlin Sans FB", 0, 24)); // NOI18N
-        relatorioButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons/relatorioTrabalho24-icon.png"))); // NOI18N
-        relatorioButton.setText("Relatório");
-        relatorioButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        relatorioButton.addActionListener(new java.awt.event.ActionListener() {
+        reportButton.setFont(new java.awt.Font("Berlin Sans FB", 0, 24)); // NOI18N
+        reportButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons/relatorioTrabalho24-icon.png"))); // NOI18N
+        reportButton.setText("Relatório");
+        reportButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        reportButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                relatorioButtonActionPerformed(evt);
+                reportButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(relatorioButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 770, 370, 50));
+        getContentPane().add(reportButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 770, 370, 50));
 
-        paymentButton.setFont(new java.awt.Font("Berlin Sans FB", 0, 24)); // NOI18N
-        paymentButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons/icons8-dinheiro-24.png"))); // NOI18N
-        paymentButton.setText("Finanças");
-        paymentButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        paymentButton.setEnabled(false);
-        paymentButton.addActionListener(new java.awt.event.ActionListener() {
+        financesButton.setFont(new java.awt.Font("Berlin Sans FB", 0, 24)); // NOI18N
+        financesButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons/icons8-dinheiro-24.png"))); // NOI18N
+        financesButton.setText("Finanças");
+        financesButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        financesButton.setEnabled(false);
+        financesButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                paymentButtonActionPerformed(evt);
+                financesButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(paymentButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 330, 370, 50));
+        getContentPane().add(financesButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 330, 370, 50));
 
         userButton.setFont(new java.awt.Font("Berlin Sans FB", 0, 24)); // NOI18N
         userButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons/icons8-usuário-16.png"))); // NOI18N
@@ -229,7 +232,7 @@ public class Menu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void newButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newButtonActionPerformed
-       controller.goAgenda();
+        controller.actionPerformed(evt);
     }//GEN-LAST:event_newButtonActionPerformed
 
     private void clientButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clientButtonActionPerformed
@@ -244,20 +247,18 @@ public class Menu extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_userButtonActionPerformed
 
-    private void relatorioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_relatorioButtonActionPerformed
+    private void reportButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reportButtonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_relatorioButtonActionPerformed
+    }//GEN-LAST:event_reportButtonActionPerformed
 
     private void quitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_quitButtonActionPerformed
         // TODO add your handling code here:
-//        adiocionar ao controlador
-        JOptionPane.showConfirmDialog(null, "Tem certeza que deseja fechar o sistema?");
-        
+        controller.actionPerformed(evt);
     }//GEN-LAST:event_quitButtonActionPerformed
 
-    private void paymentButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_paymentButtonActionPerformed
+    private void financesButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_financesButtonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_paymentButtonActionPerformed
+    }//GEN-LAST:event_financesButtonActionPerformed
 
     private void helpButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_helpButtonActionPerformed
         // TODO add your handling code here:
@@ -265,6 +266,7 @@ public class Menu extends javax.swing.JFrame {
 
     private void logoutButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutButtonActionPerformed
         // TODO add your handling code here:
+        controller.actionPerformed(evt);
     }//GEN-LAST:event_logoutButtonActionPerformed
 
     /**
@@ -307,6 +309,7 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JLabel bg;
     private javax.swing.JButton clientButton;
     private javax.swing.JButton deleteButton;
+    private javax.swing.JButton financesButton;
     private javax.swing.JLabel footer;
     private javax.swing.JLabel gerenciaTxt;
     private javax.swing.JButton helpButton;
@@ -315,14 +318,100 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JButton logoutButton;
     private javax.swing.JButton newButton;
     private javax.swing.JLabel nomeUsuario;
-    private javax.swing.JButton paymentButton;
     private javax.swing.JButton quitButton;
-    private javax.swing.JButton relatorioButton;
+    private javax.swing.JButton reportButton;
     private javax.swing.JButton serviceButton;
     private javax.swing.JButton updateButton;
     private javax.swing.JButton userButton;
     private javax.swing.JLabel usuarioAutenticadoTxt;
     // End of variables declaration//GEN-END:variables
 
+    public JButton getClientButton() {
+        return clientButton;
+    }
+
+    public void setClientButton(JButton clientButton) {
+        this.clientButton = clientButton;
+    }
+
+    public JButton getDeleteButton() {
+        return deleteButton;
+    }
+
+    public void setDeleteButton(JButton deleteButton) {
+        this.deleteButton = deleteButton;
+    }
+
+    public JTable getListaCliente_tb() {
+        return listaCliente_tb;
+    }
+
+    public void setListaCliente_tb(JTable listaCliente_tb) {
+        this.listaCliente_tb = listaCliente_tb;
+    }
+
+    public JButton getLogoutButton() {
+        return logoutButton;
+    }
+
+    public void setLogoutButton(JButton logoutButton) {
+        this.logoutButton = logoutButton;
+    }
+
+    public JButton getNewButton() {
+        return newButton;
+    }
+
+    public void setNewButton(JButton newButton) {
+        this.newButton = newButton;
+    }
+
+    public JButton getQuitButton() {
+        return quitButton;
+    }
+
+    public void setQuitButton(JButton quitButton) {
+        this.quitButton = quitButton;
+    }
+
+    public JButton getServiceButton() {
+        return serviceButton;
+    }
+
+    public void setServiceButton(JButton serviceButton) {
+        this.serviceButton = serviceButton;
+    }
+
+    public JButton getUpdateButton() {
+        return updateButton;
+    }
+
+    public void setUpdateButton(JButton updateButton) {
+        this.updateButton = updateButton;
+    }
+
+    public JButton getUserButton() {
+        return userButton;
+    }
+
+    public void setUserButton(JButton userButton) {
+        this.userButton = userButton;
+    }
+
+    public JButton getHelpButton() {
+        return helpButton;
+    }
+
+    public void setHelpButton(JButton helpButton) {
+        this.helpButton = helpButton;
+    }
+
+    public JButton getReportButton() {
+        return reportButton;
+    }
+
+    public void setReportButton(JButton reportButton) {
+        this.reportButton = reportButton;
+    }
 
 }
