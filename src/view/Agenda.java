@@ -42,6 +42,8 @@ public class Agenda extends javax.swing.JDialog {
     private void initComponents() {
 
         id_tf = new javax.swing.JTextField();
+        cancelButton = new javax.swing.JButton();
+        tituloTabelaTxt = new javax.swing.JLabel();
         id_txt1 = new javax.swing.JLabel();
         cliente_txt = new javax.swing.JLabel();
         cliente_cb = new javax.swing.JComboBox<>();
@@ -68,13 +70,28 @@ public class Agenda extends javax.swing.JDialog {
         id_tf.setFont(new java.awt.Font("Berlin Sans FB", 0, 18)); // NOI18N
         getContentPane().add(id_tf, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 40, 300, 40));
 
+        cancelButton.setFont(new java.awt.Font("Berlin Sans FB", 0, 24)); // NOI18N
+        cancelButton.setText("Cancelar");
+        cancelButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        cancelButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cancelButtonActionPerformed(evt);
+            }
+        });
+        getContentPane().add(cancelButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(1120, 340, 270, 50));
+
+        tituloTabelaTxt.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        tituloTabelaTxt.setForeground(new java.awt.Color(204, 204, 204));
+        tituloTabelaTxt.setText("Lista de agendamentos");
+        getContentPane().add(tituloTabelaTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 426, 980, 50));
+
         id_txt1.setFont(new java.awt.Font("Berlin Sans FB", 0, 24)); // NOI18N
-        id_txt1.setForeground(new java.awt.Color(255, 255, 255));
+        id_txt1.setForeground(new java.awt.Color(204, 204, 204));
         id_txt1.setText("ID");
         getContentPane().add(id_txt1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 40, 90, 40));
 
         cliente_txt.setFont(new java.awt.Font("Berlin Sans FB", 0, 24)); // NOI18N
-        cliente_txt.setForeground(new java.awt.Color(255, 255, 255));
+        cliente_txt.setForeground(new java.awt.Color(204, 204, 204));
         cliente_txt.setText("Cliente");
         getContentPane().add(cliente_txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 100, 90, 40));
 
@@ -90,12 +107,12 @@ public class Agenda extends javax.swing.JDialog {
         getContentPane().add(servico_cb, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 160, 300, 40));
 
         servico_txt.setFont(new java.awt.Font("Berlin Sans FB", 0, 24)); // NOI18N
-        servico_txt.setForeground(new java.awt.Color(255, 255, 255));
+        servico_txt.setForeground(new java.awt.Color(204, 204, 204));
         servico_txt.setText("Serviço");
         getContentPane().add(servico_txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 160, 90, 40));
 
         valor_txt.setFont(new java.awt.Font("Berlin Sans FB", 0, 24)); // NOI18N
-        valor_txt.setForeground(new java.awt.Color(255, 255, 255));
+        valor_txt.setForeground(new java.awt.Color(204, 204, 204));
         valor_txt.setText("Valor R$");
         getContentPane().add(valor_txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 220, 90, 40));
 
@@ -116,12 +133,12 @@ public class Agenda extends javax.swing.JDialog {
         getContentPane().add(dataFtf, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 280, 300, 40));
 
         data_txt.setFont(new java.awt.Font("Berlin Sans FB", 0, 24)); // NOI18N
-        data_txt.setForeground(new java.awt.Color(255, 255, 255));
+        data_txt.setForeground(new java.awt.Color(204, 204, 204));
         data_txt.setText("Data");
         getContentPane().add(data_txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 280, 90, 40));
 
         hora_txt.setFont(new java.awt.Font("Berlin Sans FB", 0, 24)); // NOI18N
-        hora_txt.setForeground(new java.awt.Color(255, 255, 255));
+        hora_txt.setForeground(new java.awt.Color(204, 204, 204));
         hora_txt.setText("Hora");
         getContentPane().add(hora_txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 340, 90, 40));
 
@@ -165,18 +182,16 @@ public class Agenda extends javax.swing.JDialog {
         listaCliente_tb.setToolTipText("");
         jScrollPane2.setViewportView(listaCliente_tb);
 
-        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 410, 1260, 390));
+        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 490, 1260, 310));
 
-        agendar_bt.setBackground(new java.awt.Color(153, 153, 255));
-        agendar_bt.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
-        agendar_bt.setForeground(new java.awt.Color(51, 51, 51));
-        agendar_bt.setText("AGENDAR");
+        agendar_bt.setFont(new java.awt.Font("Berlin Sans FB", 0, 24)); // NOI18N
+        agendar_bt.setText("Agendar");
         agendar_bt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 agendar_btActionPerformed(evt);
             }
         });
-        getContentPane().add(agendar_bt, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 340, 590, 50));
+        getContentPane().add(agendar_bt, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 340, 290, 50));
 
         observTxtArea.setColumns(20);
         observTxtArea.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
@@ -186,7 +201,7 @@ public class Agenda extends javax.swing.JDialog {
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 40, 590, 290));
 
         id_txt.setFont(new java.awt.Font("Berlin Sans FB", 0, 24)); // NOI18N
-        id_txt.setForeground(new java.awt.Color(255, 255, 255));
+        id_txt.setForeground(new java.awt.Color(204, 204, 204));
         id_txt.setText("Observação");
         getContentPane().add(id_txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 40, 140, 40));
 
@@ -212,6 +227,15 @@ public class Agenda extends javax.swing.JDialog {
         //        realiza o agendamento do cliente.
 //        this.controller.schedule();
     }//GEN-LAST:event_agendar_btActionPerformed
+
+    private void cancelButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelButtonActionPerformed
+/**
+ * botao cancelar da view agenda
+ * 
+ * 
+ */
+        this.dispose();
+    }//GEN-LAST:event_cancelButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -256,6 +280,7 @@ public class Agenda extends javax.swing.JDialog {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton agendar_bt;
     private javax.swing.JLabel bg;
+    private javax.swing.JButton cancelButton;
     private javax.swing.JComboBox<String> cliente_cb;
     private javax.swing.JLabel cliente_txt;
     private javax.swing.JFormattedTextField dataFtf;
@@ -271,6 +296,7 @@ public class Agenda extends javax.swing.JDialog {
     private javax.swing.JTextArea observTxtArea;
     private javax.swing.JComboBox<String> servico_cb;
     private javax.swing.JLabel servico_txt;
+    private javax.swing.JLabel tituloTabelaTxt;
     private javax.swing.JTextField valorTf;
     private javax.swing.JLabel valor_txt;
     // End of variables declaration//GEN-END:variables

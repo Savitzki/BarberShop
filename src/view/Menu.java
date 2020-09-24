@@ -81,6 +81,7 @@ public class Menu extends javax.swing.JFrame {
         getContentPane().add(logoutButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 980, 170, 50));
 
         helpButton.setFont(new java.awt.Font("Berlin Sans FB", 0, 24)); // NOI18N
+        helpButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons/icons8-ajuda-24.png"))); // NOI18N
         helpButton.setText("Ajuda");
         helpButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         helpButton.addActionListener(new java.awt.event.ActionListener() {
@@ -220,7 +221,7 @@ public class Menu extends javax.swing.JFrame {
         getContentPane().add(agendamentoTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 70, 960, 50));
 
         bg.setBackground(new java.awt.Color(233, 118, 45));
-        bg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/menu.png"))); // NOI18N
+        bg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/menuPrincipal.png"))); // NOI18N
         bg.setText(" ");
         getContentPane().add(bg, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -50, 1990, 1110));
 
