@@ -1,25 +1,30 @@
-package model;
+package model.login;
 
 /**
  *
  * @author Marina Savitzki
  */
-public class Login {
+public class DadosLogin {
     
     
     private static String login;
 
-    public Login() {
+    public DadosLogin() {
     }
-    
+
     public static String getLogin() {
         return login;
     }
 
     public static void setLogin(String login) {
-        Login.login = login;
+        DadosLogin.login = login;
     }
-    
+
+    @Override
+    public String toString() {
+        return getLogin();
+    }
+
     
     
 }

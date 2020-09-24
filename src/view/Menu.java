@@ -2,6 +2,7 @@ package view;
 
 import controller.MenuController;
 import javax.swing.JButton;
+import javax.swing.JLabel;
 import javax.swing.JTable;
 
 /**
@@ -424,5 +425,15 @@ public class Menu extends javax.swing.JFrame {
     public void setReportButton(JButton reportButton) {
         this.reportButton = reportButton;
     }
+
+    public JLabel getNomeUsuario() {
+        return nomeUsuario;
+    }
+
+    public void setNomeUsuario(JLabel nomeUsuario) {
+        this.nomeUsuario = nomeUsuario;
+    }
+    
+    
 
 }

@@ -14,6 +14,7 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import model.DAO.SchedulingDAO;
 import model.Scheduling;
+import model.login.DadosLogin;
 import view.Agenda;
 import view.Login;
 import view.Menu;
@@ -26,11 +27,14 @@ public class MenuController implements ActionListener {
 
     private final Menu menuPrincipal;
     private final MenuHelper helper;
+    DadosLogin dadoLogin = new DadosLogin();
 
     public MenuController(Menu menu) {
         this.menuPrincipal = menu;
         this.helper = new MenuHelper(menu);
         helper.refreshTableMenu();
+        menuPrincipal.getNomeUsuario().setText(dadoLogin.toString());
+        
     }
 
     public void goAgenda() {
