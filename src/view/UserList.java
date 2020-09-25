@@ -48,6 +48,7 @@ public class UserList extends javax.swing.JDialog {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Usuarios");
+        setPreferredSize(null);
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -55,13 +56,13 @@ public class UserList extends javax.swing.JDialog {
         updateUserButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons/icons8-alterar-24.png"))); // NOI18N
         updateUserButton.setText("Alterar");
         updateUserButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        getContentPane().add(updateUserButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 630, 200, 50));
+        getContentPane().add(updateUserButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 860, 200, 50));
 
         deleteUserButton.setFont(new java.awt.Font("Berlin Sans FB", 0, 24)); // NOI18N
         deleteUserButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons/icons8-excluir-24 (2).png"))); // NOI18N
         deleteUserButton.setText("Excluir");
         deleteUserButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        getContentPane().add(deleteUserButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 630, 200, 50));
+        getContentPane().add(deleteUserButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 860, 200, 50));
 
         newUserButton.setFont(new java.awt.Font("Berlin Sans FB", 0, 24)); // NOI18N
         newUserButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons/icons8-soma-24.png"))); // NOI18N
@@ -72,7 +73,7 @@ public class UserList extends javax.swing.JDialog {
                 newUserButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(newUserButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 630, 200, 50));
+        getContentPane().add(newUserButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 860, 200, 50));
 
         jTable1.setFont(new java.awt.Font("Berlin Sans FB", 0, 16)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
@@ -93,15 +94,16 @@ public class UserList extends javax.swing.JDialog {
         });
         listUsers.setViewportView(jTable1);
 
-        getContentPane().add(listUsers, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 120, 1020, 480));
+        getContentPane().add(listUsers, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 120, 800, 700));
 
         title.setFont(new java.awt.Font("Berlin Sans FB", 0, 24)); // NOI18N
-        title.setForeground(new java.awt.Color(51, 51, 51));
+        title.setForeground(new java.awt.Color(204, 204, 204));
         title.setText("Usuários cadastrados");
         getContentPane().add(title, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 60, 1030, 40));
 
-        bg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Prancheta 8.png"))); // NOI18N
-        getContentPane().add(bg, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1160, 790));
+        bg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/baseMenor.png"))); // NOI18N
+        bg.setPreferredSize(null);
+        getContentPane().add(bg, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 910, 960));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

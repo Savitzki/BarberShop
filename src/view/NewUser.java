@@ -108,6 +108,8 @@ public class NewUser extends javax.swing.JDialog {
         bg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Prancheta 6.png"))); // NOI18N
         getContentPane().add(bg, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 520, 590));
 
+        getAccessibleContext().setAccessibleParent(this);
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 

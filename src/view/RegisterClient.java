@@ -195,8 +195,7 @@ public class RegisterClient extends javax.swing.JDialog {
         getContentPane().add(tituloTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 50, 680, 50));
 
         bg.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        bg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/register.png"))); // NOI18N
-        bg.setPreferredSize(null);
+        bg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/baseMenor.png"))); // NOI18N
         getContentPane().add(bg, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
