@@ -389,12 +389,12 @@
     <Component class="javax.swing.JLabel" name="bg">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/images/Agendamento.png"/>
+          <Image iconType="3" name="/images/baseMaior.png"/>
         </Property>
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="0" y="0" width="1510" height="880"/>
+          <AbsoluteConstraints x="0" y="0" width="1570" height="900"/>
         </Constraint>
       </Constraints>
     </Component>

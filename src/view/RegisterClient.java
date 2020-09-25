@@ -68,10 +68,10 @@ public class RegisterClient extends javax.swing.JDialog {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         idTxt.setFont(new java.awt.Font("Berlin Sans FB", 0, 20)); // NOI18N
-        idTxt.setForeground(new java.awt.Color(204, 204, 204));
+        idTxt.setForeground(new java.awt.Color(51, 51, 51));
         idTxt.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         idTxt.setText("ID");
-        getContentPane().add(idTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 140, 140, 40));
+        getContentPane().add(idTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 110, 140, 40));
 
         id_tf.setEditable(false);
         id_tf.setFont(new java.awt.Font("Berlin Sans FB", 0, 18)); // NOI18N
@@ -80,34 +80,34 @@ public class RegisterClient extends javax.swing.JDialog {
                 id_tfActionPerformed(evt);
             }
         });
-        getContentPane().add(id_tf, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 140, 100, 40));
+        getContentPane().add(id_tf, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 110, 100, 40));
 
         nameTxt.setFont(new java.awt.Font("Berlin Sans FB", 0, 20)); // NOI18N
-        nameTxt.setForeground(new java.awt.Color(204, 204, 204));
+        nameTxt.setForeground(new java.awt.Color(51, 51, 51));
         nameTxt.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         nameTxt.setText("Nome completo*");
-        getContentPane().add(nameTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 200, 140, 40));
-        getContentPane().add(nameJtf, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 200, 570, 40));
+        getContentPane().add(nameTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 170, 140, 40));
+        getContentPane().add(nameJtf, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 170, 570, 40));
 
         rgTxt.setFont(new java.awt.Font("Berlin Sans FB", 0, 20)); // NOI18N
-        rgTxt.setForeground(new java.awt.Color(204, 204, 204));
+        rgTxt.setForeground(new java.awt.Color(51, 51, 51));
         rgTxt.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         rgTxt.setText("RG*");
-        getContentPane().add(rgTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 260, 60, 40));
-        getContentPane().add(RGjtf, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 260, 300, 40));
+        getContentPane().add(rgTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 230, 60, 40));
+        getContentPane().add(RGjtf, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 230, 300, 40));
 
         cpfTxt.setFont(new java.awt.Font("Berlin Sans FB", 0, 20)); // NOI18N
-        cpfTxt.setForeground(new java.awt.Color(204, 204, 204));
+        cpfTxt.setForeground(new java.awt.Color(51, 51, 51));
         cpfTxt.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         cpfTxt.setText("CPF*");
-        getContentPane().add(cpfTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 320, 60, 40));
-        getContentPane().add(CPFjtf, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 320, 300, 40));
+        getContentPane().add(cpfTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 290, 60, 40));
+        getContentPane().add(CPFjtf, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 290, 300, 40));
 
         dtTxt.setFont(new java.awt.Font("Berlin Sans FB", 0, 20)); // NOI18N
-        dtTxt.setForeground(new java.awt.Color(204, 204, 204));
+        dtTxt.setForeground(new java.awt.Color(51, 51, 51));
         dtTxt.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         dtTxt.setText("Data nascimento*");
-        getContentPane().add(dtTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 380, 160, 40));
+        getContentPane().add(dtTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 350, 160, 40));
 
         try {
             dataFtf.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
@@ -120,82 +120,84 @@ public class RegisterClient extends javax.swing.JDialog {
                 dataFtfActionPerformed(evt);
             }
         });
-        getContentPane().add(dataFtf, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 380, 140, 40));
+        getContentPane().add(dataFtf, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 350, 140, 40));
 
         sexoTxt.setFont(new java.awt.Font("Berlin Sans FB", 0, 20)); // NOI18N
-        sexoTxt.setForeground(new java.awt.Color(204, 204, 204));
+        sexoTxt.setForeground(new java.awt.Color(51, 51, 51));
         sexoTxt.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         sexoTxt.setText("Sexo*");
-        getContentPane().add(sexoTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 440, 100, 40));
+        getContentPane().add(sexoTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 410, 100, 40));
 
         maleRb.setFont(new java.awt.Font("Berlin Sans FB", 0, 20)); // NOI18N
-        maleRb.setForeground(new java.awt.Color(204, 204, 204));
+        maleRb.setForeground(new java.awt.Color(51, 51, 51));
         maleRb.setText("Masculino");
-        getContentPane().add(maleRb, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 440, 130, 40));
+        getContentPane().add(maleRb, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 410, 130, 40));
 
         feminineRb.setFont(new java.awt.Font("Berlin Sans FB", 0, 20)); // NOI18N
-        feminineRb.setForeground(new java.awt.Color(204, 204, 204));
+        feminineRb.setForeground(new java.awt.Color(51, 51, 51));
         feminineRb.setText("Feminino");
-        getContentPane().add(feminineRb, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 440, 130, 40));
+        getContentPane().add(feminineRb, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 410, 130, 40));
 
         emailTxt.setFont(new java.awt.Font("Berlin Sans FB", 0, 20)); // NOI18N
-        emailTxt.setForeground(new java.awt.Color(204, 204, 204));
+        emailTxt.setForeground(new java.awt.Color(51, 51, 51));
         emailTxt.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         emailTxt.setText("E-mail*");
-        getContentPane().add(emailTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 500, 90, 40));
-        getContentPane().add(emailJtf, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 500, 570, 40));
+        getContentPane().add(emailTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 470, 90, 40));
+        getContentPane().add(emailJtf, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 470, 570, 40));
 
         foneTxt.setFont(new java.awt.Font("Berlin Sans FB", 0, 20)); // NOI18N
-        foneTxt.setForeground(new java.awt.Color(204, 204, 204));
+        foneTxt.setForeground(new java.awt.Color(51, 51, 51));
         foneTxt.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         foneTxt.setText("Telefone");
-        getContentPane().add(foneTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 560, 140, 40));
-        getContentPane().add(foneJtf, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 560, 300, 40));
+        getContentPane().add(foneTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 530, 140, 40));
+        getContentPane().add(foneJtf, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 530, 300, 40));
 
         adressTxt.setFont(new java.awt.Font("Berlin Sans FB", 0, 20)); // NOI18N
-        adressTxt.setForeground(new java.awt.Color(204, 204, 204));
+        adressTxt.setForeground(new java.awt.Color(51, 51, 51));
         adressTxt.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         adressTxt.setText("Endereço*");
-        getContentPane().add(adressTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 640, 160, 40));
-        getContentPane().add(adressJtf, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 640, 570, 40));
+        getContentPane().add(adressTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 610, 160, 40));
+        getContentPane().add(adressJtf, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 610, 570, 40));
 
         cepTxt.setFont(new java.awt.Font("Berlin Sans FB", 0, 20)); // NOI18N
-        cepTxt.setForeground(new java.awt.Color(204, 204, 204));
+        cepTxt.setForeground(new java.awt.Color(51, 51, 51));
         cepTxt.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         cepTxt.setText("CEP");
-        getContentPane().add(cepTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 700, 140, 40));
-        getContentPane().add(CEPjtf, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 700, 220, 40));
+        getContentPane().add(cepTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 670, 140, 40));
+        getContentPane().add(CEPjtf, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 670, 220, 40));
 
         estadoTxt.setFont(new java.awt.Font("Berlin Sans FB", 0, 20)); // NOI18N
-        estadoTxt.setForeground(new java.awt.Color(204, 204, 204));
+        estadoTxt.setForeground(new java.awt.Color(51, 51, 51));
         estadoTxt.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         estadoTxt.setText("Estado");
-        getContentPane().add(estadoTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 700, 70, 40));
+        getContentPane().add(estadoTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 670, 70, 40));
 
+        countryStateJtf.setFont(new java.awt.Font("Berlin Sans FB", 0, 18)); // NOI18N
+        countryStateJtf.setForeground(new java.awt.Color(51, 51, 51));
         countryStateJtf.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        getContentPane().add(countryStateJtf, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 700, 270, 40));
+        getContentPane().add(countryStateJtf, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 670, 270, 40));
 
         registerButton.setFont(new java.awt.Font("Berlin Sans FB", 0, 24)); // NOI18N
         registerButton.setForeground(new java.awt.Color(51, 51, 51));
         registerButton.setText("Cadastrar");
-        getContentPane().add(registerButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 860, 280, 50));
+        getContentPane().add(registerButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 830, 280, 50));
 
         cancelButton.setFont(new java.awt.Font("Berlin Sans FB", 0, 24)); // NOI18N
         cancelButton.setForeground(new java.awt.Color(51, 51, 51));
         cancelButton.setText("Cancelar");
-        getContentPane().add(cancelButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 860, 280, 50));
-        getContentPane().add(sp1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 120, 750, 30));
-        getContentPane().add(sp2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 620, 750, -1));
-        getContentPane().add(sp3, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 760, 750, 30));
+        getContentPane().add(cancelButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 830, 280, 50));
+        getContentPane().add(sp1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, 750, 30));
+        getContentPane().add(sp2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 590, 750, -1));
+        getContentPane().add(sp3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 730, 750, 30));
 
         tituloTxt.setFont(new java.awt.Font("Berlin Sans FB", 0, 36)); // NOI18N
-        tituloTxt.setForeground(new java.awt.Color(204, 204, 204));
+        tituloTxt.setForeground(new java.awt.Color(51, 51, 51));
         tituloTxt.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         tituloTxt.setText("Cadastro de clientes");
-        getContentPane().add(tituloTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 50, 680, 50));
+        getContentPane().add(tituloTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 760, 50));
 
         bg.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        bg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/baseMenor.png"))); // NOI18N
+        bg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/corUnica.png"))); // NOI18N
         getContentPane().add(bg, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();

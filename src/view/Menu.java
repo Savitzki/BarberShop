@@ -85,7 +85,7 @@ public class Menu extends javax.swing.JFrame {
                 logoutButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(logoutButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 980, 170, 50));
+        getContentPane().add(logoutButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(1420, 980, 130, 50));
 
         helpButton.setFont(new java.awt.Font("Berlin Sans FB", 0, 24)); // NOI18N
         helpButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons/icons8-ajuda-24.png"))); // NOI18N
@@ -96,7 +96,7 @@ public class Menu extends javax.swing.JFrame {
                 helpButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(helpButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 980, 170, 50));
+        getContentPane().add(helpButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(1570, 980, 130, 50));
 
         quitButton.setFont(new java.awt.Font("Berlin Sans FB", 0, 24)); // NOI18N
         quitButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons/icons8-sair-24.png"))); // NOI18N
@@ -107,7 +107,7 @@ public class Menu extends javax.swing.JFrame {
                 quitButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(quitButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(1680, 980, 200, 50));
+        getContentPane().add(quitButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(1720, 980, 130, 50));
 
         reportButton.setFont(new java.awt.Font("Berlin Sans FB", 0, 24)); // NOI18N
         reportButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons/relatorioTrabalho24-icon.png"))); // NOI18N
@@ -118,7 +118,7 @@ public class Menu extends javax.swing.JFrame {
                 reportButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(reportButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 770, 370, 50));
+        getContentPane().add(reportButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 400, 370, 50));
 
         financesButton.setFont(new java.awt.Font("Berlin Sans FB", 0, 24)); // NOI18N
         financesButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons/icons8-dinheiro-24.png"))); // NOI18N

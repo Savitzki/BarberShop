@@ -55,10 +55,12 @@ public class NewUser extends javax.swing.JDialog {
         getContentPane().add(usuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 110, 430, 30));
 
         cancelRegisterUserButton.setFont(new java.awt.Font("Berlin Sans FB", 0, 18)); // NOI18N
+        cancelRegisterUserButton.setForeground(new java.awt.Color(51, 51, 51));
         cancelRegisterUserButton.setText("Cancelar");
         getContentPane().add(cancelRegisterUserButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 460, 200, 50));
 
         registerUserButton.setFont(new java.awt.Font("Berlin Sans FB", 0, 18)); // NOI18N
+        registerUserButton.setForeground(new java.awt.Color(51, 51, 51));
         registerUserButton.setText("Cadastrar");
         getContentPane().add(registerUserButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 460, 200, 50));
 
