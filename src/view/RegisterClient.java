@@ -180,12 +180,12 @@ public class RegisterClient extends javax.swing.JDialog {
         registerButton.setFont(new java.awt.Font("Berlin Sans FB", 0, 24)); // NOI18N
         registerButton.setForeground(new java.awt.Color(51, 51, 51));
         registerButton.setText("Cadastrar");
-        getContentPane().add(registerButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 830, 280, 50));
+        getContentPane().add(registerButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 770, 280, 50));
 
         cancelButton.setFont(new java.awt.Font("Berlin Sans FB", 0, 24)); // NOI18N
         cancelButton.setForeground(new java.awt.Color(51, 51, 51));
         cancelButton.setText("Cancelar");
-        getContentPane().add(cancelButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 830, 280, 50));
+        getContentPane().add(cancelButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 770, 280, 50));
         getContentPane().add(sp1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, 750, 30));
         getContentPane().add(sp2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 590, 750, -1));
         getContentPane().add(sp3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 730, 750, 30));
@@ -198,7 +198,7 @@ public class RegisterClient extends javax.swing.JDialog {
 
         bg.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         bg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/corUnica.png"))); // NOI18N
-        getContentPane().add(bg, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        getContentPane().add(bg, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 850));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

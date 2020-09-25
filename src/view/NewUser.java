@@ -107,7 +107,7 @@ public class NewUser extends javax.swing.JDialog {
         senhaConfirm.setText("Confirme sua senha");
         getContentPane().add(senhaConfirm, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 350, 430, 30));
 
-        bg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Prancheta 6.png"))); // NOI18N
+        bg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/corUnica.png"))); // NOI18N
         getContentPane().add(bg, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 520, 590));
 
         getAccessibleContext().setAccessibleParent(this);
