@@ -12,14 +12,14 @@ import javax.swing.JTable;
  *
  * @author Marina Savitzki
  */
-public class User extends javax.swing.JFrame {
+public class ListUser extends javax.swing.JDialog {
 
     /**
-     * Creates new form Usuario
+     * Creates new form ListUser
      */
-    public User() {
+    public ListUser(java.awt.Frame parent, boolean modal) {
+        super(parent, modal);
         initComponents();
-        setLocationRelativeTo(null);
     }
 
     /**
@@ -31,19 +31,29 @@ public class User extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        newUserButton = new javax.swing.JButton();
-        deleteUserButton = new javax.swing.JButton();
         updateUserButton = new javax.swing.JButton();
+        deleteUserButton = new javax.swing.JButton();
+        newUserButton = new javax.swing.JButton();
         listUsers = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         title = new javax.swing.JLabel();
-        fundo = new javax.swing.JLabel();
         bg = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setPreferredSize(null);
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        updateUserButton.setFont(new java.awt.Font("Berlin Sans FB", 0, 24)); // NOI18N
+        updateUserButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons/icons8-alterar-24.png"))); // NOI18N
+        updateUserButton.setText("Alterar");
+        updateUserButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        getContentPane().add(updateUserButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 860, 200, 50));
+
+        deleteUserButton.setFont(new java.awt.Font("Berlin Sans FB", 0, 24)); // NOI18N
+        deleteUserButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons/icons8-excluir-24 (2).png"))); // NOI18N
+        deleteUserButton.setText("Excluir");
+        deleteUserButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        getContentPane().add(deleteUserButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 860, 200, 50));
 
         newUserButton.setFont(new java.awt.Font("Berlin Sans FB", 0, 24)); // NOI18N
         newUserButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons/icons8-soma-24.png"))); // NOI18N
@@ -54,20 +64,9 @@ public class User extends javax.swing.JFrame {
                 newUserButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(newUserButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 630, 200, 50));
+        getContentPane().add(newUserButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 860, 200, 50));
 
-        deleteUserButton.setFont(new java.awt.Font("Berlin Sans FB", 0, 24)); // NOI18N
-        deleteUserButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons/icons8-excluir-24 (2).png"))); // NOI18N
-        deleteUserButton.setText("Excluir");
-        deleteUserButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        getContentPane().add(deleteUserButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 630, 200, 50));
-
-        updateUserButton.setFont(new java.awt.Font("Berlin Sans FB", 0, 24)); // NOI18N
-        updateUserButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons/icons8-alterar-24.png"))); // NOI18N
-        updateUserButton.setText("Alterar");
-        updateUserButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        getContentPane().add(updateUserButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 630, 200, 50));
-
+        jTable1.setFont(new java.awt.Font("Berlin Sans FB", 0, 16)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -85,34 +84,23 @@ public class User extends javax.swing.JFrame {
             }
         });
         listUsers.setViewportView(jTable1);
-        if (jTable1.getColumnModel().getColumnCount() > 0) {
-            jTable1.getColumnModel().getColumn(0).setPreferredWidth(80);
-            jTable1.getColumnModel().getColumn(0).setMaxWidth(80);
-            jTable1.getColumnModel().getColumn(1).setResizable(false);
-            jTable1.getColumnModel().getColumn(2).setResizable(false);
-            jTable1.getColumnModel().getColumn(3).setMinWidth(200);
-            jTable1.getColumnModel().getColumn(3).setPreferredWidth(200);
-            jTable1.getColumnModel().getColumn(3).setMaxWidth(200);
-        }
 
-        getContentPane().add(listUsers, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 120, 1020, 480));
+        getContentPane().add(listUsers, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 120, 800, 700));
 
         title.setFont(new java.awt.Font("Berlin Sans FB", 0, 24)); // NOI18N
         title.setForeground(new java.awt.Color(204, 204, 204));
         title.setText("Usuários cadastrados");
-        getContentPane().add(title, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 60, 1030, 40));
+        getContentPane().add(title, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 60, 640, 40));
 
-        fundo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/fundo transparente.png"))); // NOI18N
-        getContentPane().add(fundo, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, 1090, 720));
-
-        bg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Prancheta 7.png"))); // NOI18N
-        getContentPane().add(bg, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1160, 790));
+        bg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/baseMenor.png"))); // NOI18N
+        bg.setPreferredSize(null);
+        getContentPane().add(bg, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 910, 960));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void newUserButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newUserButtonActionPerformed
-
+//        this.controller.actionPerformed(evt);
     }//GEN-LAST:event_newUserButtonActionPerformed
 
     /**
@@ -132,21 +120,27 @@ public class User extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(User.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ListUser.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(User.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ListUser.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(User.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ListUser.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(User.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ListUser.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-        //</editor-fold>
 
-        /* Create and display the form */
+        /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new User().setVisible(true);
+                ListUser dialog = new ListUser(new javax.swing.JFrame(), true);
+                dialog.addWindowListener(new java.awt.event.WindowAdapter() {
+                    @Override
+                    public void windowClosing(java.awt.event.WindowEvent e) {
+                        System.exit(0);
+                    }
+                });
+                dialog.setVisible(true);
             }
         });
     }
@@ -154,7 +148,6 @@ public class User extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel bg;
     private javax.swing.JButton deleteUserButton;
-    private javax.swing.JLabel fundo;
     private javax.swing.JTable jTable1;
     private javax.swing.JScrollPane listUsers;
     private javax.swing.JButton newUserButton;
@@ -193,6 +186,7 @@ public class User extends javax.swing.JFrame {
     public void setUpdateUserButton(JButton updateUserButton) {
         this.updateUserButton = updateUserButton;
     }
-
     
+
+
 }

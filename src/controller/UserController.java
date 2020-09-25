@@ -2,8 +2,8 @@ package controller;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import view.ListUser;
 import view.NewUser;
-import view.UserList;
 
 /**
  *
@@ -11,9 +11,9 @@ import view.UserList;
  */
 public class UserController implements ActionListener{
 
-    private final UserList view;
+    private final ListUser view;
 
-    public UserController(UserList view) {
+    public UserController(ListUser view) {
         this.view = view;
     }
 
