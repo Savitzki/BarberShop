@@ -47,7 +47,6 @@ public class Menu extends javax.swing.JFrame {
         updateButton = new javax.swing.JButton();
         deleteButton = new javax.swing.JButton();
         newButton = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         listaCliente_tb = new javax.swing.JTable();
         footer = new javax.swing.JLabel();
@@ -55,7 +54,7 @@ public class Menu extends javax.swing.JFrame {
         bg = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Menu  - BarberShop");
+        setTitle("BarberShop");
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         gerenciaTxt.setFont(new java.awt.Font("Berlin Sans FB", 0, 26)); // NOI18N
@@ -75,7 +74,7 @@ public class Menu extends javax.swing.JFrame {
         getContentPane().add(usuarioAutenticadoTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 980, 220, 40));
 
         borderTxt.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
-        getContentPane().add(borderTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(21, 976, 480, 60));
+        getContentPane().add(borderTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(21, 966, 480, 80));
 
         logoutButton.setFont(new java.awt.Font("Berlin Sans FB", 0, 24)); // NOI18N
         logoutButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons/icons8-logout-arredondado-para-baixo-24.png"))); // NOI18N
@@ -86,7 +85,7 @@ public class Menu extends javax.swing.JFrame {
                 logoutButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(logoutButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(1340, 980, 150, 50));
+        getContentPane().add(logoutButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 980, 170, 50));
 
         helpButton.setFont(new java.awt.Font("Berlin Sans FB", 0, 24)); // NOI18N
         helpButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons/icons8-ajuda-24.png"))); // NOI18N
@@ -97,7 +96,7 @@ public class Menu extends javax.swing.JFrame {
                 helpButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(helpButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(1510, 980, 150, 50));
+        getContentPane().add(helpButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 980, 170, 50));
 
         quitButton.setFont(new java.awt.Font("Berlin Sans FB", 0, 24)); // NOI18N
         quitButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons/icons8-sair-24.png"))); // NOI18N
@@ -108,7 +107,7 @@ public class Menu extends javax.swing.JFrame {
                 quitButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(quitButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(1680, 980, 150, 50));
+        getContentPane().add(quitButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(1680, 980, 200, 50));
 
         reportButton.setFont(new java.awt.Font("Berlin Sans FB", 0, 24)); // NOI18N
         reportButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons/relatorioTrabalho24-icon.png"))); // NOI18N
@@ -119,7 +118,7 @@ public class Menu extends javax.swing.JFrame {
                 reportButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(reportButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 400, 370, 50));
+        getContentPane().add(reportButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 770, 370, 50));
 
         financesButton.setFont(new java.awt.Font("Berlin Sans FB", 0, 24)); // NOI18N
         financesButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons/icons8-dinheiro-24.png"))); // NOI18N
@@ -189,11 +188,6 @@ public class Menu extends javax.swing.JFrame {
         });
         getContentPane().add(newButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 780, 270, 50));
 
-        jLabel1.setFont(new java.awt.Font("Berlin Sans FB", 0, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(204, 204, 204));
-        jLabel1.setText("Data hora");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 970, 240, 70));
-
         listaCliente_tb.setFont(new java.awt.Font("Berlin Sans FB", 0, 18)); // NOI18N
         listaCliente_tb.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -241,7 +235,7 @@ public class Menu extends javax.swing.JFrame {
         getContentPane().add(agendamentoTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 70, 960, 50));
 
         bg.setBackground(new java.awt.Color(233, 118, 45));
-        bg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Prancheta 4.png"))); // NOI18N
+        bg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/menuPrincipal.png"))); // NOI18N
         bg.setText(" ");
         getContentPane().add(bg, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -50, 1990, 1110));
 
@@ -261,7 +255,7 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_serviceButtonActionPerformed
 
     private void userButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userButtonActionPerformed
-        controller.actionPerformed(evt);
+        // TODO add your handling code here:
     }//GEN-LAST:event_userButtonActionPerformed
 
     private void reportButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reportButtonActionPerformed
@@ -331,7 +325,6 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JLabel footer;
     private javax.swing.JLabel gerenciaTxt;
     private javax.swing.JButton helpButton;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable listaCliente_tb;
     private javax.swing.JButton logoutButton;

@@ -14,12 +14,12 @@ import view.Agenda;
  *
  * @author Marina Savitzki
  */
-public class SchedulingController {
+public class AgendaController {
     
     private final Agenda viewAgenda;
     private final AgendaHelper helper;
 
-    public SchedulingController(Agenda viewAgenda) {
+    public AgendaController(Agenda viewAgenda) {
         this.viewAgenda = viewAgenda;
         this.helper = new AgendaHelper(viewAgenda);
     }

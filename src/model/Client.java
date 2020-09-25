@@ -1,13 +1,15 @@
 package model;
-
 /**
  *
  * @author Marina Savitzki
  */
-public class Client extends Person {
+public class Client extends Person{
+    
 
     private String endereco;
     private String cep;
+
+
 
     public Client(String endereco, String cep, int id, String nome) {
         super(id, nome);
@@ -15,7 +17,7 @@ public class Client extends Person {
         this.cep = cep;
     }
 
-    /**
+/**
      *
      * @param id
      * @param nome
@@ -25,7 +27,8 @@ public class Client extends Person {
      * @param rg
      * @param telefone
      * @param endereco
-     * @param cep Construtores
+     * @param cep
+     * Construtores
      */
     public Client(int id, String nome, char sexo, String dtNascimento, String rg, String email, String telefone, String endereco, String cep) {
         super(id, nome, sexo, dtNascimento, rg, email, telefone);
@@ -38,12 +41,12 @@ public class Client extends Person {
         this.endereco = endereco;
         this.cep = cep;
     }
-
+    
     /**
      * Geters e Seters
-     *
-     * @return
+     * @return 
      */
+
     public String getEndereco() {
         return endereco;
     }
@@ -65,4 +68,5 @@ public class Client extends Person {
         return getNome();
     }
 
+    
 }

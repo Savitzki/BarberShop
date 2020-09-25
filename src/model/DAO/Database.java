@@ -30,7 +30,7 @@ public class Database {
         
         //criando elementos
         
-        User usuario1 = new User(1, "barbeiro", 'M', "09/05/1996", "30212121", "barbeiro@barbershop.com", "521454123", "1", "administrador");
+        User usuario1 = new User(1, "barbeiro", 'M', "09/05/1996", "30212121", "barbeiro@barbershop.com", "521454123", "barbeiro", "administrador");
         User usuario2 = new User(2, "estagiario", 'M', "09/05/1996", "30212122", "estagiario@barbershop.com", "451244123", "estagiario", "funcionario");
          
         Client cliente1 = new Client(1, "Alan Figueiredo", 'M', "30/01/1995", "30212126", "marinasavitzki@gmail.com", "5142487", "Rua jaboti 35 Canudos NH",  "93300012");
