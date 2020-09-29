@@ -82,7 +82,7 @@ public class Login extends javax.swing.JFrame {
         login_txt.setForeground(new java.awt.Color(51, 51, 51));
         login_txt.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         login_txt.setText("Login");
-        getContentPane().add(login_txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 170, 510, -1));
+        getContentPane().add(login_txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 220, 510, -1));
 
         passwdInput.setFont(new java.awt.Font("Berlin Sans FB", 0, 24)); // NOI18N
         passwdInput.setForeground(new java.awt.Color(102, 102, 102));
@@ -109,7 +109,7 @@ public class Login extends javax.swing.JFrame {
                 cancelButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(cancelButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 700, 250, 60));
+        getContentPane().add(cancelButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 620, 250, 60));
 
         entrar_bt.setBackground(new java.awt.Color(153, 153, 255));
         entrar_bt.setFont(new java.awt.Font("Berlin Sans FB", 0, 24)); // NOI18N
@@ -122,7 +122,9 @@ public class Login extends javax.swing.JFrame {
                 entrar_btActionPerformed(evt);
             }
         });
-        getContentPane().add(entrar_bt, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 700, 250, 60));
+        getContentPane().add(entrar_bt, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 620, 250, 60));
+
+        bg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/loginNovo.png"))); // NOI18N
         getContentPane().add(bg, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();

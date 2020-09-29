@@ -1,6 +1,7 @@
 package view;
 
 import controller.MenuTesteController;
+import java.awt.Color;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFormattedTextField;
@@ -44,6 +45,7 @@ public class MenuTeste extends javax.swing.JFrame {
         listaCliente_tb = new javax.swing.JTable();
         bg_main = new javax.swing.JLabel();
         agenda = new javax.swing.JPanel();
+        homeButtonAgenda = new javax.swing.JButton();
         id_tf = new javax.swing.JTextField();
         cliente_cb = new javax.swing.JComboBox<>();
         servico_cb = new javax.swing.JComboBox<>();
@@ -66,30 +68,32 @@ public class MenuTeste extends javax.swing.JFrame {
         tituloTabelaTxt = new javax.swing.JLabel();
         bg_main1 = new javax.swing.JLabel();
         users = new javax.swing.JPanel();
-        title = new javax.swing.JLabel();
+        tittleUsers = new javax.swing.JLabel();
         listUsers = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
+        homeButtonUser = new javax.swing.JButton();
         newUserButton = new javax.swing.JButton();
         deleteUserButton = new javax.swing.JButton();
         updateUserButton = new javax.swing.JButton();
-        bg_main2 = new javax.swing.JLabel();
+        bg_users = new javax.swing.JLabel();
         footer = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         logoutButtonFooter = new javax.swing.JButton();
         exitButtonFooter = new javax.swing.JButton();
         bg_footer = new javax.swing.JLabel();
         left = new javax.swing.JPanel();
+        recordsPanel = new javax.swing.JPanel();
+        recordLabel = new javax.swing.JLabel();
+        userPanel = new javax.swing.JPanel();
+        userLabel = new javax.swing.JLabel();
+        servicePanel = new javax.swing.JPanel();
+        serviceLabel = new javax.swing.JLabel();
+        clientPanel = new javax.swing.JPanel();
+        clientLabel = new javax.swing.JLabel();
         gerenciaTxt = new javax.swing.JLabel();
-        clientButton = new javax.swing.JButton();
-        serviceButton = new javax.swing.JButton();
-        userButton = new javax.swing.JButton();
-        financesButton = new javax.swing.JButton();
-        reportButton = new javax.swing.JButton();
-        bg_left = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(1980, 1080));
-        setMinimumSize(null);
         setPreferredSize(new java.awt.Dimension(1980, 1060));
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -154,6 +158,17 @@ public class MenuTeste extends javax.swing.JFrame {
         center.add(main);
 
         agenda.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        homeButtonAgenda.setFont(new java.awt.Font("Berlin Sans FB", 0, 24)); // NOI18N
+        homeButtonAgenda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons/icons8-alterar-24.png"))); // NOI18N
+        homeButtonAgenda.setText("Home");
+        homeButtonAgenda.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        homeButtonAgenda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                homeButtonAgendaActionPerformed(evt);
+            }
+        });
+        agenda.add(homeButtonAgenda, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 880, 270, 50));
 
         id_tf.setFont(new java.awt.Font("Berlin Sans FB", 0, 18)); // NOI18N
         agenda.add(id_tf, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 100, 140, 40));
@@ -234,6 +249,7 @@ public class MenuTeste extends javax.swing.JFrame {
         agenda.add(id_txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 100, 140, 40));
 
         cancelButtonAgenda.setFont(new java.awt.Font("Berlin Sans FB", 0, 24)); // NOI18N
+        cancelButtonAgenda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons/icons8-excluir-24.png"))); // NOI18N
         cancelButtonAgenda.setText("Cancelar");
         cancelButtonAgenda.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         cancelButtonAgenda.addActionListener(new java.awt.event.ActionListener() {
@@ -251,13 +267,14 @@ public class MenuTeste extends javax.swing.JFrame {
         agenda.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 100, 730, 350));
 
         agendar_bt.setFont(new java.awt.Font("Berlin Sans FB", 0, 24)); // NOI18N
+        agendar_bt.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons/agenda-icon.png"))); // NOI18N
         agendar_bt.setText("Agendar");
         agendar_bt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 agendar_btActionPerformed(evt);
             }
         });
-        agenda.add(agendar_bt, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 880, 290, 50));
+        agenda.add(agendar_bt, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 880, 270, 50));
 
         listaCliente_tb1.setFont(new java.awt.Font("Berlin Sans FB", 0, 18)); // NOI18N
         listaCliente_tb1.setModel(new javax.swing.table.DefaultTableModel(
@@ -300,10 +317,11 @@ public class MenuTeste extends javax.swing.JFrame {
 
         users.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        title.setFont(new java.awt.Font("Berlin Sans FB", 0, 24)); // NOI18N
-        title.setForeground(new java.awt.Color(204, 204, 204));
-        title.setText("Usuários cadastrados");
-        users.add(title, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 60, 640, 40));
+        tittleUsers.setBackground(new java.awt.Color(51, 51, 51));
+        tittleUsers.setFont(new java.awt.Font("Berlin Sans FB", 0, 26)); // NOI18N
+        tittleUsers.setForeground(new java.awt.Color(51, 51, 51));
+        tittleUsers.setText("Usuários cadastrados");
+        users.add(tittleUsers, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, 1230, 50));
 
         jTable1.setFont(new java.awt.Font("Berlin Sans FB", 0, 16)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
@@ -324,7 +342,18 @@ public class MenuTeste extends javax.swing.JFrame {
         });
         listUsers.setViewportView(jTable1);
 
-        users.add(listUsers, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 120, 800, 700));
+        users.add(listUsers, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, 1520, 760));
+
+        homeButtonUser.setFont(new java.awt.Font("Berlin Sans FB", 0, 24)); // NOI18N
+        homeButtonUser.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons/icons8-alterar-24.png"))); // NOI18N
+        homeButtonUser.setText("Home");
+        homeButtonUser.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        homeButtonUser.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                homeButtonUserActionPerformed(evt);
+            }
+        });
+        users.add(homeButtonUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 880, 270, 50));
 
         newUserButton.setFont(new java.awt.Font("Berlin Sans FB", 0, 24)); // NOI18N
         newUserButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons/icons8-soma-24.png"))); // NOI18N
@@ -335,22 +364,22 @@ public class MenuTeste extends javax.swing.JFrame {
                 newUserButtonActionPerformed(evt);
             }
         });
-        users.add(newUserButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 860, 200, 50));
+        users.add(newUserButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 880, 270, 50));
 
         deleteUserButton.setFont(new java.awt.Font("Berlin Sans FB", 0, 24)); // NOI18N
         deleteUserButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons/icons8-excluir-24 (2).png"))); // NOI18N
         deleteUserButton.setText("Excluir");
         deleteUserButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        users.add(deleteUserButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 860, 200, 50));
+        users.add(deleteUserButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 880, 270, 50));
 
         updateUserButton.setFont(new java.awt.Font("Berlin Sans FB", 0, 24)); // NOI18N
         updateUserButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons/icons8-alterar-24.png"))); // NOI18N
         updateUserButton.setText("Alterar");
         updateUserButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        users.add(updateUserButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 860, 200, 50));
+        users.add(updateUserButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 880, 270, 50));
 
-        bg_main2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/baseSemCor.png"))); // NOI18N
-        users.add(bg_main2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1610, 960));
+        bg_users.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/baseSemCor.png"))); // NOI18N
+        users.add(bg_users, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1610, 960));
 
         center.add(users);
 
@@ -383,96 +412,115 @@ public class MenuTeste extends javax.swing.JFrame {
 
         getContentPane().add(footer, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 960, 1980, 130));
 
+        left.setBackground(new java.awt.Color(182, 127, 88));
         left.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        recordsPanel.setBackground(new java.awt.Color(182, 127, 88));
+        recordsPanel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        recordsPanel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                MenuTeste.this.mouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                MenuTeste.this.mouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                MenuTeste.this.mouseExited(evt);
+            }
+        });
+        recordsPanel.setLayout(null);
+
+        recordLabel.setFont(new java.awt.Font("Berlin Sans FB", 0, 26)); // NOI18N
+        recordLabel.setForeground(new java.awt.Color(255, 255, 255));
+        recordLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        recordLabel.setText("Relatórios");
+        recordsPanel.add(recordLabel);
+        recordLabel.setBounds(20, 0, 280, 50);
+
+        left.add(recordsPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 260, 320, 50));
+
+        userPanel.setBackground(new java.awt.Color(182, 127, 88));
+        userPanel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        userPanel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                MenuTeste.this.mouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                MenuTeste.this.mouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                MenuTeste.this.mouseExited(evt);
+            }
+        });
+        userPanel.setLayout(null);
+
+        userLabel.setFont(new java.awt.Font("Berlin Sans FB", 0, 26)); // NOI18N
+        userLabel.setForeground(new java.awt.Color(255, 255, 255));
+        userLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        userLabel.setText("Usuários");
+        userPanel.add(userLabel);
+        userLabel.setBounds(20, 0, 270, 50);
+
+        left.add(userPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 210, 320, 50));
+
+        servicePanel.setBackground(new java.awt.Color(182, 127, 88));
+        servicePanel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        servicePanel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                MenuTeste.this.mouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                MenuTeste.this.mouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                MenuTeste.this.mouseExited(evt);
+            }
+        });
+        servicePanel.setLayout(null);
+
+        serviceLabel.setFont(new java.awt.Font("Berlin Sans FB", 0, 26)); // NOI18N
+        serviceLabel.setForeground(new java.awt.Color(255, 255, 255));
+        serviceLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        serviceLabel.setText("Serviços");
+        servicePanel.add(serviceLabel);
+        serviceLabel.setBounds(20, 0, 270, 50);
+
+        left.add(servicePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 160, 320, 50));
+
+        clientPanel.setBackground(new java.awt.Color(182, 127, 88));
+        clientPanel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        clientPanel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                MenuTeste.this.mouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                MenuTeste.this.mouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                MenuTeste.this.mouseExited(evt);
+            }
+        });
+        clientPanel.setLayout(null);
+
+        clientLabel.setFont(new java.awt.Font("Berlin Sans FB", 0, 26)); // NOI18N
+        clientLabel.setForeground(new java.awt.Color(255, 255, 255));
+        clientLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        clientLabel.setText("Clientes");
+        clientPanel.add(clientLabel);
+        clientLabel.setBounds(30, 0, 250, 50);
+
+        left.add(clientPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 110, 320, 50));
 
         gerenciaTxt.setFont(new java.awt.Font("Berlin Sans FB", 0, 26)); // NOI18N
         gerenciaTxt.setForeground(new java.awt.Color(255, 255, 255));
+        gerenciaTxt.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         gerenciaTxt.setText("Gerenciamento");
-        left.add(gerenciaTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 280, 50));
-
-        clientButton.setFont(new java.awt.Font("Berlin Sans FB", 0, 24)); // NOI18N
-        clientButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons/grupo-de-usuário24.png"))); // NOI18N
-        clientButton.setText("Cliente");
-        clientButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        clientButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                clientButtonActionPerformed(evt);
-            }
-        });
-        left.add(clientButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 280, 50));
-
-        serviceButton.setFont(new java.awt.Font("Berlin Sans FB", 0, 24)); // NOI18N
-        serviceButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons/icons8-serviço-24.png"))); // NOI18N
-        serviceButton.setText("Serviço");
-        serviceButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        serviceButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                serviceButtonActionPerformed(evt);
-            }
-        });
-        left.add(serviceButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, 280, 50));
-
-        userButton.setFont(new java.awt.Font("Berlin Sans FB", 0, 24)); // NOI18N
-        userButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons/icons8-usuário-16.png"))); // NOI18N
-        userButton.setText("Usuário");
-        userButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        userButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                userButtonActionPerformed(evt);
-            }
-        });
-        left.add(userButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 260, 280, 50));
-
-        financesButton.setFont(new java.awt.Font("Berlin Sans FB", 0, 24)); // NOI18N
-        financesButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons/icons8-dinheiro-24.png"))); // NOI18N
-        financesButton.setText("Finanças");
-        financesButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        financesButton.setEnabled(false);
-        financesButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                financesButtonActionPerformed(evt);
-            }
-        });
-        left.add(financesButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 330, 280, 50));
-
-        reportButton.setFont(new java.awt.Font("Berlin Sans FB", 0, 24)); // NOI18N
-        reportButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons/relatorioTrabalho24-icon.png"))); // NOI18N
-        reportButton.setText("Relatório");
-        reportButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        reportButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                reportButtonActionPerformed(evt);
-            }
-        });
-        left.add(reportButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 400, 280, 50));
-
-        bg_left.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/lateral.png"))); // NOI18N
-        left.add(bg_left, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 320, 970));
+        left.add(gerenciaTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 320, 50));
 
         getContentPane().add(left, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, 320, 970));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void clientButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clientButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_clientButtonActionPerformed
-
-    private void serviceButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_serviceButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_serviceButtonActionPerformed
-
-    private void userButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userButtonActionPerformed
-         this.controller.actionPerformed(evt);
-    }//GEN-LAST:event_userButtonActionPerformed
-
-    private void financesButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_financesButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_financesButtonActionPerformed
-
-    private void reportButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reportButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_reportButtonActionPerformed
 
     private void newButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newButtonActionPerformed
         this.controller.actionPerformed(evt);
@@ -503,8 +551,53 @@ public class MenuTeste extends javax.swing.JFrame {
     }//GEN-LAST:event_exitButtonFooterActionPerformed
 
     private void newUserButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newUserButtonActionPerformed
-        //        this.controller.actionPerformed(evt);
+        this.controller.actionPerformed(evt);
     }//GEN-LAST:event_newUserButtonActionPerformed
+
+    private void homeButtonAgendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_homeButtonAgendaActionPerformed
+        this.controller.actionPerformed(evt);
+    }//GEN-LAST:event_homeButtonAgendaActionPerformed
+
+    private void homeButtonUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_homeButtonUserActionPerformed
+        this.controller.actionPerformed(evt);
+    }//GEN-LAST:event_homeButtonUserActionPerformed
+
+    private void mouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mouseEntered
+        if (evt.getSource() == clientPanel) {
+            clientPanel.setBackground(new Color(240, 240, 240));
+            clientLabel.setForeground(new Color(51, 51, 51));
+        } else if (evt.getSource() == servicePanel) {
+            servicePanel.setBackground(new Color(240, 240, 240));
+            serviceLabel.setForeground(new Color(51, 51, 51));
+        } else if (evt.getSource() == userPanel) {
+            userPanel.setBackground(new Color(240, 240, 240));
+            userLabel.setForeground(new Color(51, 51, 51));
+        } else if (evt.getSource() == recordsPanel) {
+            recordsPanel.setBackground(new Color(240, 240, 240));
+            recordLabel.setForeground(new Color(51, 51, 51));
+        }
+
+    }//GEN-LAST:event_mouseEntered
+
+    private void mouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mouseExited
+        if (evt.getSource() == clientPanel) {
+            clientPanel.setBackground(new Color(182, 127, 88));
+            clientLabel.setForeground(new Color(255, 255, 255));
+        } else if (evt.getSource() == servicePanel) {
+            servicePanel.setBackground(new Color(182, 127, 88));
+            serviceLabel.setForeground(new Color(255, 255, 255));
+        } else if (evt.getSource() == userPanel) {
+            userPanel.setBackground(new Color(182, 127, 88));
+            userLabel.setForeground(new Color(255, 255, 255));
+        } else if (evt.getSource() == recordsPanel) {
+            recordsPanel.setBackground(new Color(182, 127, 88));
+            recordLabel.setForeground(new Color(255, 255, 255));
+        }
+    }//GEN-LAST:event_mouseExited
+
+    private void mouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mouseClicked
+            controller.visibleView(evt);
+    }//GEN-LAST:event_mouseClicked
 
     /**
      * @param args the command line arguments
@@ -546,22 +639,23 @@ public class MenuTeste extends javax.swing.JFrame {
     private javax.swing.JLabel agendamentoTxt;
     private javax.swing.JButton agendar_bt;
     private javax.swing.JLabel bg_footer;
-    private javax.swing.JLabel bg_left;
     private javax.swing.JLabel bg_main;
     private javax.swing.JLabel bg_main1;
-    private javax.swing.JLabel bg_main2;
+    private javax.swing.JLabel bg_users;
     private javax.swing.JButton cancelButtonAgenda;
     private javax.swing.JPanel center;
-    private javax.swing.JButton clientButton;
+    private javax.swing.JLabel clientLabel;
+    private javax.swing.JPanel clientPanel;
     private javax.swing.JComboBox<String> cliente_cb;
     private javax.swing.JLabel cliente_txt;
     private javax.swing.JFormattedTextField dataFtf;
     private javax.swing.JLabel data_txt;
     private javax.swing.JButton deleteUserButton;
     private javax.swing.JButton exitButtonFooter;
-    private javax.swing.JButton financesButton;
     private javax.swing.JPanel footer;
     private javax.swing.JLabel gerenciaTxt;
+    private javax.swing.JButton homeButtonAgenda;
+    private javax.swing.JButton homeButtonUser;
     private javax.swing.JFormattedTextField hora_ftf;
     private javax.swing.JLabel hora_txt;
     private javax.swing.JTextField id_tf;
@@ -581,20 +675,22 @@ public class MenuTeste extends javax.swing.JFrame {
     private javax.swing.JButton newButton;
     private javax.swing.JButton newUserButton;
     private javax.swing.JTextArea observTxtArea;
-    private javax.swing.JButton reportButton;
-    private javax.swing.JButton serviceButton;
+    private javax.swing.JLabel recordLabel;
+    private javax.swing.JPanel recordsPanel;
+    private javax.swing.JLabel serviceLabel;
+    private javax.swing.JPanel servicePanel;
     private javax.swing.JComboBox<String> servico_cb;
     private javax.swing.JLabel servico_txt;
-    private javax.swing.JLabel title;
+    private javax.swing.JLabel tittleUsers;
     private javax.swing.JLabel tituloTabelaTxt;
     private javax.swing.JButton updateUserButton;
-    private javax.swing.JButton userButton;
+    private javax.swing.JLabel userLabel;
+    private javax.swing.JPanel userPanel;
     private javax.swing.JPanel users;
     private javax.swing.JTextField valorTf;
     private javax.swing.JLabel valor_txt;
     // End of variables declaration//GEN-END:variables
 
-    
     public JPanel getAgenda() {
         return agenda;
     }
@@ -619,14 +715,6 @@ public class MenuTeste extends javax.swing.JFrame {
         this.cancelButtonAgenda = cancelButtonAgenda;
     }
 
-    public JButton getClientButton() {
-        return clientButton;
-    }
-
-    public void setClientButton(JButton clientButton) {
-        this.clientButton = clientButton;
-    }
-
     public JComboBox<String> getCliente_cb() {
         return cliente_cb;
     }
@@ -643,13 +731,6 @@ public class MenuTeste extends javax.swing.JFrame {
         this.dataFtf = dataFtf;
     }
 
-    public JButton getFinancesButton() {
-        return financesButton;
-    }
-
-    public void setFinancesButton(JButton financesButton) {
-        this.financesButton = financesButton;
-    }
 
     public JFormattedTextField getHora_ftf() {
         return hora_ftf;
@@ -715,36 +796,12 @@ public class MenuTeste extends javax.swing.JFrame {
         this.observTxtArea = observTxtArea;
     }
 
-    public JButton getReportButton() {
-        return reportButton;
-    }
-
-    public void setReportButton(JButton reportButton) {
-        this.reportButton = reportButton;
-    }
-
-    public JButton getServiceButton() {
-        return serviceButton;
-    }
-
-    public void setServiceButton(JButton serviceButton) {
-        this.serviceButton = serviceButton;
-    }
-
     public JComboBox<String> getServico_cb() {
         return servico_cb;
     }
 
     public void setServico_cb(JComboBox<String> servico_cb) {
         this.servico_cb = servico_cb;
-    }
-
-    public JButton getUserButton() {
-        return userButton;
-    }
-
-    public void setUserButton(JButton userButton) {
-        this.userButton = userButton;
     }
 
     public JPanel getUsuarios() {
@@ -779,4 +836,53 @@ public class MenuTeste extends javax.swing.JFrame {
         this.logoutButtonFooter = logoutButtonFooter;
     }
 
+    public JButton getHomeButtonAgenda() {
+        return homeButtonAgenda;
+    }
+
+    public void setHomeButtonAgenda(JButton homeButtonAgenda) {
+        this.homeButtonAgenda = homeButtonAgenda;
+    }
+
+    public JButton getHomeButtonUser() {
+        return homeButtonUser;
+    }
+
+    public void setHomeButtonUser(JButton homeButtonUser) {
+        this.homeButtonUser = homeButtonUser;
+    }
+
+    public JLabel getClientLabel() {
+        return clientLabel;
+    }
+
+    public void setClientLabel(JLabel clientLabel) {
+        this.clientLabel = clientLabel;
+    }
+
+    public JPanel getClientPanel() {
+        return clientPanel;
+    }
+
+    public void setClientPanel(JPanel clientPanel) {
+        this.clientPanel = clientPanel;
+    }
+
+    public JLabel getUserLabel() {
+        return userLabel;
+    }
+
+    public void setUserLabel(JLabel userLabel) {
+        this.userLabel = userLabel;
+    }
+
+    public JPanel getUserPanel() {
+        return userPanel;
+    }
+
+    public void setUserPanel(JPanel userPanel) {
+        this.userPanel = userPanel;
+    }
+
+    
 }

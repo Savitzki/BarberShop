@@ -11,6 +11,7 @@ import model.User;
 import model.login.DadosLogin;
 import view.Login;
 import view.Menu;
+import view.MenuTeste;
 
 /**
  *
@@ -34,8 +35,10 @@ public class LoginController {
         User usuarioAutenticado = userDAO.selectPorNomeESenha(user);
         
         if(usuarioAutenticado != null){
-            Menu menu = new Menu();
-            menu.setVisible(true);
+//            Menu menu = new Menu();
+//            menu.setVisible(true);
+              MenuTeste menu = new MenuTeste();
+              menu.setVisible(true);
             this.view.dispose();
         }else{
             view.message("Usuario ou senha invalidos");
