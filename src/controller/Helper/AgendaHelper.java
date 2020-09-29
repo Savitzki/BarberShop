@@ -1,3 +1,4 @@
+/**
 package controller.Helper;
 
 import java.util.ArrayList;
@@ -12,7 +13,7 @@ import view.Agenda;
 /**
  *
  * @author Marina Savitzki
- */
+
 public class AgendaHelper implements InterfaceHelper{
     
     private final Agenda viewAgenda;
@@ -20,7 +21,7 @@ public class AgendaHelper implements InterfaceHelper{
     /**
      * 
      * @param viewAgenda 
-     */
+     
     public AgendaHelper(Agenda viewAgenda) {
         this.viewAgenda = viewAgenda;
     }
@@ -105,3 +106,4 @@ public class AgendaHelper implements InterfaceHelper{
     
     
 }
+*/

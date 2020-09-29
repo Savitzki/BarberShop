@@ -3,17 +3,17 @@ package controller;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
-import view.MenuTeste;
+import view.MenuPrincipal;
 
 /**
  *
  * @author Marina Savitzki
  */
-public class MenuTesteController implements ActionListener {
+public class MenuPrincipalController implements ActionListener {
 
-    private final MenuTeste view;
+    private final MenuPrincipal view;
 
-    public MenuTesteController(MenuTeste view) {
+    public MenuPrincipalController(MenuPrincipal view) {
         this.view = view;
     }
 

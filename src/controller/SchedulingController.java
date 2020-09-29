@@ -1,3 +1,4 @@
+/**
 package controller;
 
 import controller.Helper.AgendaHelper;
@@ -13,7 +14,7 @@ import view.Agenda;
 /**
  *
  * @author Marina Savitzki
- */
+ 
 public class SchedulingController {
     
     private final Agenda viewAgenda;
@@ -34,7 +35,7 @@ public class SchedulingController {
     }
 /**
  * Atualizando comboBox de clientes da tela agenda
- */
+
     public void refreshClient(){
         ClientDAO clientDAO = new ClientDAO();
         ArrayList<Client> clients = clientDAO.selectAll();
@@ -69,3 +70,4 @@ public class SchedulingController {
     }
     
 }
+*/

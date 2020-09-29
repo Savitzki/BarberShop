@@ -1,4 +1,4 @@
-package controller;
+/**package controller;
 
 import controller.Helper.AgendaHelper;
 import java.util.ArrayList;
@@ -13,7 +13,7 @@ import view.Agenda;
 /**
  *
  * @author Marina Savitzki
- */
+
 public class AgendaController {
     
     private final Agenda viewAgenda;
@@ -34,7 +34,7 @@ public class AgendaController {
     }
 /**
  * Atualizando comboBox de clientes da tela agenda
- */
+
     public void refreshClient(){
         ClientDAO clientDAO = new ClientDAO();
         ArrayList<Client> clients = clientDAO.selectAll();
@@ -69,3 +69,4 @@ public class AgendaController {
     }
     
 }
+ */

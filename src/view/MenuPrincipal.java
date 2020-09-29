@@ -1,6 +1,6 @@
 package view;
 
-import controller.MenuTesteController;
+import controller.MenuPrincipalController;
 import java.awt.Color;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
@@ -15,17 +15,17 @@ import javax.swing.JTextField;
  *
  * @author Marina Savitzki
  */
-public class MenuTeste extends javax.swing.JFrame {
+public class MenuPrincipal extends javax.swing.JFrame {
 
-    private final MenuTesteController controller;
+    private final MenuPrincipalController controller;
 
     /**
      * Creates new form MenuTeste
      */
-    public MenuTeste() {
+    public MenuPrincipal() {
         initComponents();
         setExtendedState(MAXIMIZED_BOTH);
-        this.controller = new MenuTesteController(this);
+        this.controller = new MenuPrincipalController(this);
     }
 
     /**
@@ -43,6 +43,7 @@ public class MenuTeste extends javax.swing.JFrame {
         newButton = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         listaCliente_tb = new javax.swing.JTable();
+        updateUserButton1 = new javax.swing.JButton();
         bg_main = new javax.swing.JLabel();
         agenda = new javax.swing.JPanel();
         homeButtonAgenda = new javax.swing.JButton();
@@ -93,14 +94,13 @@ public class MenuTeste extends javax.swing.JFrame {
         gerenciaTxt = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(1980, 1080));
-        setPreferredSize(new java.awt.Dimension(1980, 1060));
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         center.setBackground(new java.awt.Color(200, 200, 200));
         center.setLayout(new javax.swing.BoxLayout(center, javax.swing.BoxLayout.LINE_AXIS));
 
+        main.setBackground(new java.awt.Color(245, 245, 245));
         main.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         agendamentoTxt.setBackground(new java.awt.Color(51, 51, 51));
@@ -152,15 +152,23 @@ public class MenuTeste extends javax.swing.JFrame {
 
         main.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, 1520, 760));
 
-        bg_main.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/baseSemCor.png"))); // NOI18N
+        updateUserButton1.setFont(new java.awt.Font("Berlin Sans FB", 0, 24)); // NOI18N
+        updateUserButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons/icons8-alterar-24.png"))); // NOI18N
+        updateUserButton1.setText("Alterar");
+        updateUserButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        main.add(updateUserButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 880, 270, 50));
+
+        bg_main.setBackground(new java.awt.Color(246, 246, 246));
         main.add(bg_main, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1610, 960));
 
         center.add(main);
 
+        agenda.setBackground(new java.awt.Color(245, 245, 245));
         agenda.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        homeButtonAgenda.setBackground(new java.awt.Color(182, 137, 104));
         homeButtonAgenda.setFont(new java.awt.Font("Berlin Sans FB", 0, 24)); // NOI18N
-        homeButtonAgenda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons/icons8-alterar-24.png"))); // NOI18N
+        homeButtonAgenda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons/home.png"))); // NOI18N
         homeButtonAgenda.setText("Home");
         homeButtonAgenda.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         homeButtonAgenda.addActionListener(new java.awt.event.ActionListener() {
@@ -170,6 +178,7 @@ public class MenuTeste extends javax.swing.JFrame {
         });
         agenda.add(homeButtonAgenda, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 880, 270, 50));
 
+        id_tf.setEditable(false);
         id_tf.setFont(new java.awt.Font("Berlin Sans FB", 0, 18)); // NOI18N
         agenda.add(id_tf, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 100, 140, 40));
 
@@ -248,6 +257,7 @@ public class MenuTeste extends javax.swing.JFrame {
         id_txt.setText("Observação");
         agenda.add(id_txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 100, 140, 40));
 
+        cancelButtonAgenda.setBackground(new java.awt.Color(182, 137, 104));
         cancelButtonAgenda.setFont(new java.awt.Font("Berlin Sans FB", 0, 24)); // NOI18N
         cancelButtonAgenda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons/icons8-excluir-24.png"))); // NOI18N
         cancelButtonAgenda.setText("Cancelar");
@@ -266,6 +276,7 @@ public class MenuTeste extends javax.swing.JFrame {
 
         agenda.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 100, 730, 350));
 
+        agendar_bt.setBackground(new java.awt.Color(182, 137, 104));
         agendar_bt.setFont(new java.awt.Font("Berlin Sans FB", 0, 24)); // NOI18N
         agendar_bt.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons/agenda-icon.png"))); // NOI18N
         agendar_bt.setText("Agendar");
@@ -310,11 +321,12 @@ public class MenuTeste extends javax.swing.JFrame {
         tituloTabelaTxt.setText("Lista de agendamentos");
         agenda.add(tituloTabelaTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 480, 980, 50));
 
-        bg_main1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/baseSemCor.png"))); // NOI18N
+        bg_main1.setBackground(new java.awt.Color(244, 244, 244));
         agenda.add(bg_main1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1610, 960));
 
         center.add(agenda);
 
+        users.setBackground(new java.awt.Color(245, 245, 245));
         users.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         tittleUsers.setBackground(new java.awt.Color(51, 51, 51));
@@ -377,8 +389,6 @@ public class MenuTeste extends javax.swing.JFrame {
         updateUserButton.setText("Alterar");
         updateUserButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         users.add(updateUserButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 880, 270, 50));
-
-        bg_users.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/baseSemCor.png"))); // NOI18N
         users.add(bg_users, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1610, 960));
 
         center.add(users);
@@ -388,6 +398,8 @@ public class MenuTeste extends javax.swing.JFrame {
         footer.setBackground(new java.awt.Color(255, 255, 255));
         footer.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel1.setFont(new java.awt.Font("Berlin Sans FB", 0, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("user login");
         footer.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 20, 270, 40));
 
@@ -419,13 +431,13 @@ public class MenuTeste extends javax.swing.JFrame {
         recordsPanel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         recordsPanel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                MenuTeste.this.mouseClicked(evt);
+                MenuPrincipal.this.mouseClicked(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                MenuTeste.this.mouseEntered(evt);
+                MenuPrincipal.this.mouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                MenuTeste.this.mouseExited(evt);
+                MenuPrincipal.this.mouseExited(evt);
             }
         });
         recordsPanel.setLayout(null);
@@ -443,13 +455,13 @@ public class MenuTeste extends javax.swing.JFrame {
         userPanel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         userPanel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                MenuTeste.this.mouseClicked(evt);
+                MenuPrincipal.this.mouseClicked(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                MenuTeste.this.mouseEntered(evt);
+                MenuPrincipal.this.mouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                MenuTeste.this.mouseExited(evt);
+                MenuPrincipal.this.mouseExited(evt);
             }
         });
         userPanel.setLayout(null);
@@ -467,13 +479,13 @@ public class MenuTeste extends javax.swing.JFrame {
         servicePanel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         servicePanel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                MenuTeste.this.mouseClicked(evt);
+                MenuPrincipal.this.mouseClicked(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                MenuTeste.this.mouseEntered(evt);
+                MenuPrincipal.this.mouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                MenuTeste.this.mouseExited(evt);
+                MenuPrincipal.this.mouseExited(evt);
             }
         });
         servicePanel.setLayout(null);
@@ -491,13 +503,13 @@ public class MenuTeste extends javax.swing.JFrame {
         clientPanel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         clientPanel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                MenuTeste.this.mouseClicked(evt);
+                MenuPrincipal.this.mouseClicked(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                MenuTeste.this.mouseEntered(evt);
+                MenuPrincipal.this.mouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                MenuTeste.this.mouseExited(evt);
+                MenuPrincipal.this.mouseExited(evt);
             }
         });
         clientPanel.setLayout(null);
@@ -616,20 +628,21 @@ public class MenuTeste extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(MenuTeste.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MenuPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(MenuTeste.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MenuPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(MenuTeste.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MenuPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(MenuTeste.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MenuPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new MenuTeste().setVisible(true);
+                new MenuPrincipal().setVisible(true);
             }
         });
     }
@@ -684,6 +697,7 @@ public class MenuTeste extends javax.swing.JFrame {
     private javax.swing.JLabel tittleUsers;
     private javax.swing.JLabel tituloTabelaTxt;
     private javax.swing.JButton updateUserButton;
+    private javax.swing.JButton updateUserButton1;
     private javax.swing.JLabel userLabel;
     private javax.swing.JPanel userPanel;
     private javax.swing.JPanel users;

@@ -53,8 +53,15 @@ public class Login extends javax.swing.JFrame {
         bg = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMinimumSize(new java.awt.Dimension(1220, 915));
+        setMaximumSize(null);
+        setMinimumSize(null);
+        setPreferredSize(null);
         setResizable(false);
+        addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                Login.this.mouseEntered(evt);
+            }
+        });
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         esqueciMinhaSenha.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
@@ -66,28 +73,28 @@ public class Login extends javax.swing.JFrame {
                 esqueciMinhaSenhaMouseClicked(evt);
             }
         });
-        getContentPane().add(esqueciMinhaSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 520, 140, -1));
+        getContentPane().add(esqueciMinhaSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 520, 140, -1));
 
         user_txt.setFont(new java.awt.Font("Berlin Sans FB", 0, 26)); // NOI18N
         user_txt.setForeground(new java.awt.Color(51, 51, 51));
         user_txt.setText("Usuário");
-        getContentPane().add(user_txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 310, 400, 30));
+        getContentPane().add(user_txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 310, 400, 30));
 
         pw_txt.setFont(new java.awt.Font("Berlin Sans FB", 0, 26)); // NOI18N
         pw_txt.setForeground(new java.awt.Color(51, 51, 51));
         pw_txt.setText("Senha");
-        getContentPane().add(pw_txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 420, 400, 30));
+        getContentPane().add(pw_txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 420, 400, 30));
 
         login_txt.setFont(new java.awt.Font("Berlin Sans FB", 0, 40)); // NOI18N
         login_txt.setForeground(new java.awt.Color(51, 51, 51));
         login_txt.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         login_txt.setText("Login");
-        getContentPane().add(login_txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 220, 510, -1));
+        getContentPane().add(login_txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 220, 510, -1));
 
         passwdInput.setFont(new java.awt.Font("Berlin Sans FB", 0, 24)); // NOI18N
         passwdInput.setForeground(new java.awt.Color(102, 102, 102));
         passwdInput.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(102, 102, 102)));
-        getContentPane().add(passwdInput, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 460, 520, 50));
+        getContentPane().add(passwdInput, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 460, 520, 50));
 
         userInput.setFont(new java.awt.Font("Berlin Sans FB", 0, 24)); // NOI18N
         userInput.setForeground(new java.awt.Color(102, 102, 102));
@@ -97,34 +104,50 @@ public class Login extends javax.swing.JFrame {
                 userInputActionPerformed(evt);
             }
         });
-        getContentPane().add(userInput, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 350, 520, 50));
+        getContentPane().add(userInput, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 350, 520, 50));
 
-        cancelButton.setBackground(new java.awt.Color(204, 204, 204));
+        cancelButton.setBackground(new java.awt.Color(237, 237, 237));
         cancelButton.setFont(new java.awt.Font("Berlin Sans FB", 0, 24)); // NOI18N
         cancelButton.setForeground(new java.awt.Color(51, 51, 51));
         cancelButton.setText("Cancelar");
         cancelButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        cancelButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                Login.this.mouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                Login.this.mouseExited(evt);
+            }
+        });
         cancelButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cancelButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(cancelButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 620, 250, 60));
+        getContentPane().add(cancelButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 620, 250, 60));
 
-        entrar_bt.setBackground(new java.awt.Color(153, 153, 255));
+        entrar_bt.setBackground(new java.awt.Color(237, 237, 237));
         entrar_bt.setFont(new java.awt.Font("Berlin Sans FB", 0, 24)); // NOI18N
         entrar_bt.setForeground(new java.awt.Color(51, 51, 51));
         entrar_bt.setText("Entrar");
         entrar_bt.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         entrar_bt.setPreferredSize(new java.awt.Dimension(135, 37));
+        entrar_bt.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                Login.this.mouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                Login.this.mouseExited(evt);
+            }
+        });
         entrar_bt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 entrar_btActionPerformed(evt);
             }
         });
-        getContentPane().add(entrar_bt, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 620, 250, 60));
+        getContentPane().add(entrar_bt, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 620, 250, 60));
 
-        bg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/loginNovo.png"))); // NOI18N
+        bg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/loginV2.png"))); // NOI18N
         getContentPane().add(bg, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
@@ -151,6 +174,14 @@ public class Login extends javax.swing.JFrame {
          * 
          */
     }//GEN-LAST:event_esqueciMinhaSenhaMouseClicked
+
+    private void mouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mouseEntered
+        controller.buttonsColorEntered(evt);
+    }//GEN-LAST:event_mouseEntered
+
+    private void mouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mouseExited
+        controller.buttonColorExited(evt);
+    }//GEN-LAST:event_mouseExited
 
     /**
      * @param args the command line arguments
@@ -200,6 +231,14 @@ public class Login extends javax.swing.JFrame {
 
     public JPasswordField getPasswdInput() {
         return passwdInput;
+    }
+
+    public JButton getCancelButton() {
+        return cancelButton;
+    }
+
+    public void setCancelButton(JButton cancelButton) {
+        this.cancelButton = cancelButton;
     }
 
     public void setPasswdInput(JPasswordField passwdInput) {
