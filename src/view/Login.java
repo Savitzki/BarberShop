@@ -42,6 +42,7 @@ public class Login extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel1 = new javax.swing.JLabel();
         esqueciMinhaSenha = new javax.swing.JLabel();
         user_txt = new javax.swing.JLabel();
         pw_txt = new javax.swing.JLabel();
@@ -54,7 +55,6 @@ public class Login extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(null);
-        setMinimumSize(null);
         setPreferredSize(null);
         setResizable(false);
         addMouseListener(new java.awt.event.MouseAdapter() {
@@ -63,6 +63,10 @@ public class Login extends javax.swing.JFrame {
             }
         });
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8_user_100px.png"))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 120, 110, 80));
 
         esqueciMinhaSenha.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
         esqueciMinhaSenha.setForeground(new java.awt.Color(51, 51, 51));
@@ -262,6 +266,7 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JButton cancelButton;
     private javax.swing.JButton entrar_bt;
     private javax.swing.JLabel esqueciMinhaSenha;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel login_txt;
     private javax.swing.JPasswordField passwdInput;
     private javax.swing.JLabel pw_txt;

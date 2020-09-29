@@ -30,14 +30,11 @@ public class LoginController {
 
     public void logIN() {
         User user = helper.pullModel();
-//        DadosLogin login = new DadosLogin();
         DadosLogin.setLogin(user.getNome());
         UserDAO userDAO = new UserDAO();
         User usuarioAutenticado = userDAO.selectPorNomeESenha(user);
 
         if (usuarioAutenticado != null) {
-//            Menu menu = new Menu();
-//            menu.setVisible(true);
             MenuPrincipal menu = new MenuPrincipal();
             menu.setVisible(true);
             this.view.dispose();
