@@ -1,9 +1,11 @@
 package controller;
 
 import java.awt.Color;
+import java.awt.Component;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
+import javax.swing.JPanel;
 import view.MenuPrincipal;
 
 /**
@@ -14,58 +16,45 @@ public class MenuPrincipalController implements ActionListener {
 
     private final MenuPrincipal view;
 
-
     public MenuPrincipalController(MenuPrincipal view) {
         this.view = view;
-        
+
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-
-        if (e.getSource() == view.getCancelButtonAgenda()) {
-            view.getMain().setVisible(true);
-            view.getAgenda().setVisible(false);
-        }
-        if (e.getSource() == view.getNewButton()) {
-            view.getMain().setVisible(false);
-            view.getAgenda().setVisible(true);
-        }
+//
+//        if (e.getSource() == view.getCancelButtonAgenda()) {
+//            view.getMain().setVisible(true);
+//            view.getAgenda().setVisible(false);
+//        }
+//        if (e.getSource() == view.getNewButton()) {
+//            view.getMain().setVisible(false);
+//            view.getAgenda().setVisible(true);
+//        }
         if (e.getSource() == view.getExitButtonFooter()) {
             view.dispose();
             view.setDefaultCloseOperation(0);
         }
-        if (e.getSource() == view.getHomeButtonUser() || e.getSource() == view.getHomeButtonAgenda()) {
-            view.getUsuarios().setVisible(false);
-            view.getAgenda().setVisible(false);
-            view.getMain().setVisible(true);
-        }
+//        if (e.getSource() == view.getHomeButtonUser() || e.getSource() == view.getHomeButtonAgenda()) {
+//            view.getUsuarios().setVisible(false);
+//            view.getAgenda().setVisible(false);
+//            view.getMain().setVisible(true);
+//        }
     }
 //Controller dos botoes laterais do menuPrincipal
 
-    public void visibleView(MouseEvent e) {
-        if (e.getSource() == view.getUserPanel()) {
-            view.getUsuarios().setVisible(true);
-            view.getAgenda().setVisible(false);
-            view.getMain().setVisible(false);
-        }
-    }
+//    public void visibleView(MouseEvent e) {
+//        if (e.getSource() == view.getUserPanel()) {
+//            view.getUsuarios().setVisible(true);
+//            view.getAgenda().setVisible(false);
+//            view.getMain().setVisible(false);
+//        }
+//    }
 
-public void buttonMouseEntered(MouseEvent e) {
-        if (e.getSource() == view.getClientPanel()) {
-            view.getClientPanel().setBackground(new Color(223, 139, 75));
-            view.getClientLabel().setForeground(new Color(51, 51, 51));
-        } else if (e.getSource() == view.getUserPanel()) {
-            view.getUserPanel().setBackground(new Color(223, 139, 75));
-            view.getUserLabel().setForeground(new Color(51, 51, 51));
-        } else if (e.getSource() == view.getServicePanel()) {
-            view.getServicePanel().setBackground(new Color(223, 139, 75));
-            view.getServiceLabel().setForeground(new Color(51, 51, 51));
-        } else if (e.getSource() == view.getRecordsPanel()) {
-            view.getRecordsPanel().setBackground(new Color(223, 139, 75));
-            view.getRecordLabel().setForeground(new Color(51, 51, 51));
+    public void buttonMouseEntered(MouseEvent e) {
 //            botoes da main
-        } else if (e.getSource() == view.getNewButtonMain()) {
+        if (e.getSource() == view.getNewButtonMain()) {
             view.getNewButtonMain().setBackground(new Color(223, 139, 75));
             view.getNewButtonMain().setForeground(Color.BLACK);
         } else if (e.getSource() == view.getUpdateButtonMain()) {
@@ -82,20 +71,8 @@ public void buttonMouseEntered(MouseEvent e) {
     }
 
     public void buttonMouseExited(MouseEvent e) {
-        if (e.getSource() == view.getClientPanel()) {
-            view.getClientPanel().setBackground(new Color(182, 127, 88));
-            view.getClientLabel().setForeground(new Color(255, 255, 255));
-        } else if (e.getSource() == view.getServicePanel()) {
-            view.getServicePanel().setBackground(new Color(182, 127, 88));
-            view.getServiceLabel().setForeground(new Color(255, 255, 255));
-        } else if (e.getSource() == view.getUserPanel()) {
-            view.getUserPanel().setBackground(new Color(182, 127, 88));
-            view.getUserLabel().setForeground(new Color(255, 255, 255));
-        } else if (e.getSource() == view.getRecordsPanel()) {
-            view.getRecordsPanel().setBackground(new Color(182, 127, 88));
-            view.getRecordLabel().setForeground(new Color(255, 255, 255));
 //            botoes da main
-        } else if (e.getSource() == view.getNewButtonMain()) {
+        if (e.getSource() == view.getNewButtonMain()) {
             view.getNewButtonMain().setBackground(new Color(182, 127, 88));
             view.getNewButtonMain().setForeground(new Color(255, 255, 255));
         } else if (e.getSource() == view.getUpdateButtonMain()) {
@@ -110,5 +87,36 @@ public void buttonMouseEntered(MouseEvent e) {
             view.getLogoutButtonFooter().setBackground(new Color(255, 255, 255));
             view.getLogoutButtonFooter().setForeground(Color.BLACK);
         }
-    }    
+    }
+
+    public void paintComponentsMouseEntered(JPanel[] panels, MouseEvent evt) {
+        for (JPanel panel : panels) {
+            if (evt.getSource() == panel) {
+                panel.setBackground(new Color(191, 138, 100));
+            }
+        }
+
+    }
+
+    //Chamado quando o componente não possui o mouse em cima.
+    public void paintComponentsMouseExited(JPanel[] panels, MouseEvent evt) {
+        for (JPanel panel : panels) {
+            if (evt.getSource() == panel) {
+                panel.setBackground(new Color(182, 127, 88));
+            }
+        }
+    }
+
+    public void styleComponentsLeftMenu(JPanel[] panels, JPanel[] secPanels, MouseEvent evt, JPanel internPanel) {
+        Component component = evt.getComponent();
+        component.setBackground(new Color(191, 138, 100));
+        internPanel.setOpaque(true);
+        for (JPanel panel : panels) {
+            panel.setBackground(new Color(182, 127, 88));
+        }
+        for (JPanel secPanel : secPanels) {
+            secPanel.setOpaque(false);
+        }
+    }
+
 }
